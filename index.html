@@ -12,21 +12,141 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
-      /* --- Hero Section --- */
-      .hero-section {
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-          url("https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop");
-        background-size: cover;
-        background-position: center;
-        height: 60vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-        margin-bottom: 60px;
+     
+
+      /* --- HERO SECTION STYLES --- */
+      .hero-wrapper {
+        background: linear-gradient(105deg, #f3f4f6 0%, #ffffff 100%);
+        padding-top: 80px;
+        padding-bottom: 140px; /* Space for the floating search bar */
+        position: relative;
+        overflow: visible;
       }
 
+      .hero-tag {
+        background-color: #fca311; /* Yellow/Orange tone */
+        color: #000;
+        font-weight: 600;
+        padding: 8px 20px;
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.2;
+        color: #000;
+        margin-bottom: 20px;
+      }
+
+      .hero-subtitle {
+        color: #6c757d;
+        font-size: 1.25rem;
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+
+      .hero-pattern {
+        position: absolute;
+        top: 20%;
+        left: 45%;
+        width: 100px;
+        opacity: 0.5;
+      }
+
+      .hero-car-img {
+        max-width: 100%;
+        height: auto;
+        transform: scale(1.1); /* Make it pop out a bit */
+      }
+
+      /* --- FLOATING SEARCH BAR --- */
+      .search-container {
+        margin-top: -80px; /* Pull it up to overlap hero */
+        position: relative;
+        z-index: 10;
+        padding-bottom: 80px;
+      }
+
+      .search-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      }
+
+      .search-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+
+      .search-tab {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 25px;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .help-link {
+        color: #999;
+        text-decoration: none;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .search-field-group {
+        border: 1px solid #eee;
+        border-radius: 15px;
+        padding: 15px;
+        transition: 0.3s;
+      }
+      .search-field-group:hover {
+        border-color: #ddd;
+        background-color: #f9f9f9;
+      }
+
+      .field-label {
+        font-size: 0.75rem;
+        color: #888;
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      .field-value {
+        font-weight: 700;
+        color: #000;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.95rem;
+      }
+
+      .btn-search {
+        background-color: #000;
+        color: #fff;
+        border-radius: 50px;
+        padding: 12px 30px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: 0.3s;
+      }
+      .btn-search:hover {
+        background-color: #333;
+        color: #fff;
+      }
       /* --- Driver Card Container (The 3D Space) --- */
       .driver-card-wrapper {
         background-color: transparent;
@@ -249,14 +369,97 @@
       </div>
     </nav>
 
-    <header class="hero-section">
-        <div class="container">
-            <h1 class="display-3 fw-bold mb-3">Find Your Perfect Chauffeur</h1>
-            <p class="lead mb-4 fw-light">Reliable, professional drivers for your journey across India</p>
-            <a href="#drivers" class="btn btn-warning text-white rounded-pill px-5 py-2 fw-bold shadow">Explore Drivers</a>
-        </div>
-    </header>
 
+    <section class="hero-wrapper">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 z-1">
+                    <div class="hero-tag">
+                        <i class="fa fa-globe-asia"></i> Explore India
+                    </div>
+                    <h1 class="hero-title">
+                        Unlock the secrets of<br>
+                        South India<br>
+                        with Chauffeur Guide
+                    </h1>
+                    <p class="hero-subtitle">
+                        Travel Without Limits Browse, Book, Explore
+                    </p>
+                    
+                    <div class="mt-4 opacity-25">
+                         <i class="fa fa-caret-up mx-1"></i><i class="fa fa-caret-up mx-1"></i><i class="fa fa-caret-up mx-1"></i><br>
+                         <i class="fa fa-caret-up mx-1"></i><i class="fa fa-caret-up mx-1"></i><i class="fa fa-caret-up mx-1"></i><br>
+                         <i class="fa fa-caret-up mx-1"></i><i class="fa fa-caret-up mx-1"></i><i class="fa fa-caret-up mx-1"></i>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 position-relative text-center">
+                    <img src="https://stimg.cardekho.com/images/car-images/930x620/Toyota/Innova-Crysta/8183/1606215610091/223_SILVER_f3f2f5.jpg" alt="Toyota Innova" class="hero-car-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="search-container">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="search-card">
+                        <div class="search-header">
+                            <span class="search-tab">Search Chauffeur-guides</span>
+                            <a href="#" class="help-link"><i class="fa fa-user"></i> Need some help?</a>
+                        </div>
+
+                        <form>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="search-field-group">
+                                        <span class="field-label">Select from city</span>
+                                        <div class="field-value">
+                                            <i class="fa fa-map-marker-alt text-muted"></i> Kochi, Kerala <i class="fa fa-chevron-down ms-auto text-muted small"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                     <div class="search-field-group">
+                                        <span class="field-label">Select to city</span>
+                                        <div class="field-value">
+                                            <i class="fa fa-map-marker-alt text-muted"></i> Kochi, Kerala <i class="fa fa-chevron-down ms-auto text-muted small"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-2 col-md-4">
+                                     <div class="search-field-group">
+                                        <span class="field-label">Check In</span>
+                                        <div class="field-value">
+                                            <i class="far fa-calendar text-muted"></i> 02 Jan <i class="fa fa-chevron-down ms-auto text-muted small"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-2 col-md-4">
+                                     <div class="search-field-group">
+                                        <span class="field-label">Check Out</span>
+                                        <div class="field-value">
+                                            <i class="far fa-calendar text-muted"></i> 02 Jan <i class="fa fa-chevron-down ms-auto text-muted small"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-2 col-md-4 text-end">
+                                    <button type="submit" class="btn-search w-100 justify-content-center">
+                                        <i class="fa fa-search"></i> Search
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <main id="drivers" class="container pb-5">
         <div class="row g-4 justify-content-center">
             
