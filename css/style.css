@@ -1,0 +1,213 @@
+/* =========================================
+   FILE: css/style.css
+   ========================================= */
+
+/* 1. TYPOGRAPHY CONFIGURATION (LATO) */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+:root {
+  /* --- COLOR PALETTE --- */
+  /* Primary Brand: Professional Orange */
+  --brand-primary: hsl(38, 100%, 45%);
+  --brand-secondary: hsl(38, 100%, 35%);
+
+  /* Neutrals & Backgrounds */
+  --brand-dark: hsl(210, 11%, 15%);
+  --text-muted: hsl(208, 7%, 46%);
+
+  /* Variable Declarations */
+  --color-white: #ffffff;
+  --color-off-white: hsl(210, 17%, 95%);
+  --color-gray-soft: #f1f3f5;
+
+  /* Borders */
+  --border-light: #eeeeee;
+  --border-medium: #dee2e6;
+  --border-input: #e9ecef;
+
+  /* --- SPACING & BORDERS --- */
+  --border-radius-card: 12px;
+  --border-radius-btn: 50px;
+}
+
+/* 2. GLOBAL RESET */
+
+html {
+  /* FONT SIZE */
+  /* font-size: 100%; /* 100% of 16px = 16px */
+  /* font-size: 87.5%; /* 87.5% of 16px = 14px */
+  font-size: 75%; /* 75% of 16px = 12px */
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: var(--brand-dark);
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-white);
+}
+
+.bg-primary {
+  background-color: var(--brand-primary) !important;
+}
+
+.text-primary {
+  color: var(--brand-primary) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* 3. COMPONENT: BUTTONS */
+.btn-primary {
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: var(--color-white);
+  padding: 10px 25px;
+  border-radius: var(--border-radius-btn);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-secondary);
+  border-color: var(--brand-secondary);
+  color: var(--color-white);
+}
+
+/* 4. COMPONENT: NAVBAR (Updated for Compact Layout) */
+/* Note: .top-bar has been removed as it is no longer used */
+
+.navbar-brand {
+  font-weight: 900;
+  color: var(--brand-primary) !important;
+  letter-spacing: 1px;
+  line-height: 1; /* Tighten line height for the two text lines */
+}
+
+.nav-link {
+  color: var(--brand-dark) !important;
+  font-weight: 700; /* Bolder text for readability at small sizes */
+  font-size: 0.8rem; /* UPDATED: Matches your request for smaller font */
+  margin-right: 10px; /* Reduced spacing for compact look */
+  text-transform: uppercase; /* Optional: Adds to the professional 'header' feel */
+  letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+  color: var(--brand-primary) !important;
+}
+
+/* 5. PAGE SPECIFIC: CONTACT PAGE */
+
+/* Hero Section */
+.page-hero {
+  background-color: var(--color-off-white);
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+/* Contact Info Box (Left Side) */
+.contact-info-item {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.contact-icon {
+  width: 45px;
+  height: 45px;
+  background-color: #ded1ba;
+  color: var(--brand-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+
+/* Contact Form Card (Right Side) */
+.contact-form-card {
+  background: var(--color-white);
+  padding: 40px;
+  border-radius: var(--border-radius-card);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-light);
+}
+
+.form-label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--brand-dark);
+  margin-bottom: 8px;
+}
+
+.form-control {
+  background-color: var(--color-off-white);
+  border: 1px solid var(--border-input);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  background-color: var(--color-white);
+  border-color: var(--brand-primary);
+  box-shadow: none;
+}
+
+/* 6. COMPONENT: FOOTER */
+footer {
+  background-color: var(--color-off-white);
+  font-size: 0.9rem;
+}
+
+.footer-heading {
+  font-weight: 800;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--brand-dark);
+}
+
+.footer-link {
+  display: block;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.footer-link:hover {
+  color: var(--brand-primary);
+  padding-left: 5px;
+}
+
+.social-btn {
+  width: 35px;
+  height: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-medium);
+  color: var(--brand-dark);
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.social-btn:hover {
+  background-color: var(--brand-primary);
+  color: var(--color-white);
+  border-color: var(--brand-primary);
+}
