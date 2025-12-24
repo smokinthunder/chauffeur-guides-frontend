@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
     const searchBtn = document.querySelector('.btn-primary');
     
-    searchBtn.addEventListener('click', function() {
-        // Handle click logic
-        alert("Searching for drivers...");
-    });
+    // searchBtn.addEventListener('click', function() {
+    //     // Handle click logic
+    //     alert("Searching for drivers...");
+    // });
 });
