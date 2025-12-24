@@ -28,6 +28,12 @@
   /* --- SPACING & BORDERS --- */
   --border-radius-card: 12px;
   --border-radius-btn: 50px;
+
+  /* Override Bootstrap's default sans-serif font stack */
+  --bs-font-sans-serif: "Inter", sans-serif;
+
+  /* Apply to the body */
+  --bs-body-font-family: var(--bs-font-sans-serif);
 }
 
 /* 2. GLOBAL RESET */
@@ -40,7 +46,7 @@ html {
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: var(--bs-body-font-family);
   color: var(--brand-dark);
   -webkit-font-smoothing: antialiased;
   background-color: var(--color-white);
@@ -110,6 +116,13 @@ a {
 .nav-link:hover {
   color: var(--brand-primary) !important;
 }
+
+.navbar-logo {
+  height: 40px;      /* matches your old design */
+  width: auto;       /* keeps aspect ratio */
+  image-rendering: auto;
+}
+
 
 /* 5. PAGE SPECIFIC: CONTACT PAGE */
 
