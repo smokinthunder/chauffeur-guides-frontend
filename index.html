@@ -7,425 +7,12 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      /* --- HERO SECTION STYLES --- */
-      .hero-wrapper {
-        background: linear-gradient(105deg, #f3f4f6 0%, #ffffff 100%);
-        padding-top: 80px;
-        padding-bottom: 140px; /* Space for the floating search bar */
-        position: relative;
-        overflow: visible;
-      }
-
-      .hero-tag {
-        background-color: #fca311; /* Yellow/Orange tone */
-        color: #000;
-        font-weight: 600;
-        padding: 8px 20px;
-        border-radius: 50px;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 0.9rem;
-        margin-bottom: 25px;
-      }
-
-      .hero-title {
-        font-size: 3.5rem;
-        font-weight: 800;
-        line-height: 1.2;
-        color: #000;
-        margin-bottom: 20px;
-      }
-
-      .hero-subtitle {
-        color: #6c757d;
-        font-size: 1.25rem;
-        font-weight: 400;
-        margin-bottom: 0;
-      }
-
-      .hero-pattern {
-        position: absolute;
-        top: 20%;
-        left: 45%;
-        width: 100px;
-        opacity: 0.5;
-      }
-
-      .hero-car-img {
-        max-width: 100%;
-        height: auto;
-        transform: scale(1.1); /* Make it pop out a bit */
-      }
-
-      /* --- FLOATING SEARCH BAR --- */
-      .search-container {
-        margin-top: -80px; /* Pull it up to overlap hero */
-        position: relative;
-        z-index: 10;
-        padding-bottom: 80px;
-      }
-
-      .search-card {
-        background: #fff;
-        border-radius: 20px;
-        padding: 30px;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-      }
-
-      .search-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 25px;
-      }
-
-      .search-tab {
-        background-color: #000;
-        color: #fff;
-        padding: 10px 25px;
-        border-radius: 30px;
-        font-size: 0.9rem;
-        font-weight: 500;
-      }
-
-      .help-link {
-        color: #999;
-        text-decoration: none;
-        font-size: 0.9rem;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-
-      .search-field-group {
-        border: 1px solid #eee;
-        border-radius: 15px;
-        padding: 15px;
-        transition: 0.3s;
-      }
-      .search-field-group:hover {
-        border-color: #ddd;
-        background-color: #f9f9f9;
-      }
-
-      .field-label {
-        font-size: 0.75rem;
-        color: #888;
-        margin-bottom: 5px;
-        display: block;
-      }
-
-      .field-value {
-        font-weight: 700;
-        color: #000;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 0.95rem;
-      }
-
-      .btn-search {
-        background-color: #000;
-        color: #fff;
-        border-radius: 50px;
-        padding: 12px 30px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        transition: 0.3s;
-      }
-      .btn-search:hover {
-        background-color: #333;
-        color: #fff;
-      }
-      /* --- Driver Card Container (The 3D Space) --- */
-      .driver-card-wrapper {
-        background-color: transparent;
-        width: 100%;
-        height: 520px; /* Fixed height to ensure uniform flip axis */
-        perspective: 1000px; /* Essential for 3D effect */
-        margin-bottom: 30px;
-      }
-
-      /* --- The Flipper (Holds Front and Back) --- */
-      .driver-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: left;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-        border-radius: 20px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      }
-
-      /* Hover Trigger */
-      .driver-card-wrapper:hover .driver-card-inner {
-        transform: rotateY(180deg);
-      }
-
-      /* --- Common Face Styles --- */
-      .driver-card-front,
-      .driver-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border-radius: 20px;
-        border: 1px solid #f0f0f0;
-        background-color: #fff;
-        overflow: hidden;
-      }
-
-      /* --- Front Side Styling --- */
-      .driver-card-front {
-        background-color: #fff;
-      }
-
-      .card-top-section {
-        background-color: #f8f9fa; /* Light grey bg for image area */
-        height: 200px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-bottom-left-radius: 30px; /* Curved separation */
-        border-bottom-right-radius: 30px;
-      }
-
-      .profile-circle {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 4px solid #fff;
-        object-fit: cover;
-      }
-
-      .favorite-icon {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 1.2rem;
-        cursor: pointer;
-        color: #333;
-      }
-      .favorite-icon:hover {
-        color: #dc3545;
-      }
-
-      /* The Rating Badge overlapping the two sections */
-      .rating-badge {
-        position: absolute;
-        bottom: -15px; /* Pull it down to overlap */
-        background: #fff;
-        padding: 5px 15px;
-        border-radius: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: #555;
-        border: 1px solid #eee;
-        z-index: 2;
-      }
-
-      .card-content-section {
-        padding: 40px 25px 25px 25px; /* Top padding clears the badge */
-      }
-
-      .driver-name {
-        font-size: 1.25rem;
-        font-weight: 800;
-        margin-bottom: 5px;
-        color: #000;
-      }
-
-      .driver-loc {
-        color: #999;
-        font-size: 0.9rem;
-        margin-bottom: 25px;
-      }
-
-      .spec-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        font-size: 0.85rem;
-        color: #333;
-        font-weight: 500;
-        margin-bottom: 30px;
-      }
-
-      .spec-item {
-        display: flex;
-        align-items: start;
-        gap: 10px;
-      }
-
-      .spec-icon {
-        color: #ccc;
-        width: 20px;
-        text-align: center;
-      }
-
-      .card-actions {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: auto;
-      }
-
-      .btn-book {
-        background-color: #f0f2f5;
-        color: #000;
-        font-weight: 700;
-        border: none;
-        padding: 10px 25px;
-        border-radius: 30px;
-        font-size: 0.9rem;
-        transition: 0.3s;
-      }
-      .btn-book:hover {
-        background-color: #e4e6e9;
-      }
-
-      /* --- Back Side Styling (Reviews) --- */
-      .driver-card-back {
-        background-color: #fff;
-        transform: rotateY(180deg);
-        padding: 30px;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .review-header {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-
-      .review-list {
-        flex-grow: 1;
-        overflow-y: auto;
-      }
-
-      .review-item {
-        background: #f8f9fa;
-        border-radius: 10px;
-        padding: 15px;
-        margin-bottom: 10px;
-        font-size: 0.85rem;
-      }
-
-      .review-stars {
-        color: #ffc107;
-        font-size: 0.7rem;
-        margin-bottom: 5px;
-      }
-
-      /* Scrollbar styling for reviews */
-      .review-list::-webkit-scrollbar {
-        width: 4px;
-      }
-      .review-list::-webkit-scrollbar-thumb {
-        background: #ddd;
-        border-radius: 4px;
-      }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-xl bg-white shadow-sm sticky-top py-2">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <img
-            src="assets/logo/logo.png"
-            alt="Chauffeur Guide"
-            class="navbar-logo"
-          />
-        </a>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul
-            class="navbar-nav mx-auto mb-2 mb-xl-0 align-items-center"
-            style="font-size: 0.8rem"
-          >
-            <li class="nav-item">
-              <a
-                class="nav-link text-dark fw-bold px-3"
-                href="pages/driver-profile.html"
-                >Chauffeur Guides</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark fw-bold px-3" href="#">Hire a Cab</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark fw-bold px-3" href="#"
-                >Trips in India</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark fw-bold px-3" href="#">Activities</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark fw-bold px-3" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark fw-bold px-3" href="pages/faq.html"
-                >FAQ</a
-              >
-            </li>
-          </ul>
-
-          <div
-            class="d-flex flex-column flex-xl-row align-items-center gap-3 mt-3 mt-xl-0"
-          >
-            <div
-              class="d-flex align-items-center fw-bold text-dark"
-              style="font-size: 0.85rem"
-            >
-              <span
-                class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle me-2"
-                style="width: 26px; height: 26px"
-              >
-                <i class="fa fa-phone" style="font-size: 0.65rem"></i>
-              </span>
-              <span>+91 94473 07190</span>
-            </div>
-            <a
-              href="pages/login.html"
-              class="btn btn-primary px-3 py-1 rounded-pill text-white fw-bold shadow-none border-0"
-              style="
-                font-size: 0.75rem;
-                min-width: 130px;
-                letter-spacing: 0.5px;
-              "
-              >Login / Register</a
-            >
-          </div>
-        </div>
-      </div>
-    </nav>
+    
+    <div id="header-placeholder"></div>
 
     <section class="hero-wrapper">
       <div class="container">
@@ -444,15 +31,9 @@
             </p>
 
             <div class="mt-4 opacity-25">
-              <i class="fa fa-caret-up mx-1"></i
-              ><i class="fa fa-caret-up mx-1"></i
-              ><i class="fa fa-caret-up mx-1"></i><br />
-              <i class="fa fa-caret-up mx-1"></i
-              ><i class="fa fa-caret-up mx-1"></i
-              ><i class="fa fa-caret-up mx-1"></i><br />
-              <i class="fa fa-caret-up mx-1"></i
-              ><i class="fa fa-caret-up mx-1"></i
-              ><i class="fa fa-caret-up mx-1"></i>
+              <i class="fa fa-caret-up mx-1"></i><i class="fa fa-caret-up mx-1"></i><i class="fa fa-caret-up mx-1"></i><br />
+              <i class="fa fa-caret-up mx-1"></i><i class="fa fa-caret-up mx-1"></i><i class="fa fa-caret-up mx-1"></i><br />
+              <i class="fa fa-caret-up mx-1"></i><i class="fa fa-caret-up mx-1"></i><i class="fa fa-caret-up mx-1"></i>
             </div>
           </div>
 
@@ -474,9 +55,7 @@
             <div class="search-card">
               <div class="search-header">
                 <span class="search-tab">Search Chauffeur-guides</span>
-                <a href="#" class="help-link"
-                  ><i class="fa fa-user"></i> Need some help?</a
-                >
+                <a href="#" class="help-link"><i class="fa fa-user"></i> Need some help?</a>
               </div>
 
               <form>
@@ -485,11 +64,8 @@
                     <div class="search-field-group">
                       <span class="field-label">Select from city</span>
                       <div class="field-value">
-                        <i class="fa fa-map-marker-alt text-muted"></i> Kochi,
-                        Kerala
-                        <i
-                          class="fa fa-chevron-down ms-auto text-muted small"
-                        ></i>
+                        <i class="fa fa-map-marker-alt text-muted"></i> Kochi, Kerala
+                        <i class="fa fa-chevron-down ms-auto text-muted small"></i>
                       </div>
                     </div>
                   </div>
@@ -498,11 +74,8 @@
                     <div class="search-field-group">
                       <span class="field-label">Select to city</span>
                       <div class="field-value">
-                        <i class="fa fa-map-marker-alt text-muted"></i> Kochi,
-                        Kerala
-                        <i
-                          class="fa fa-chevron-down ms-auto text-muted small"
-                        ></i>
+                        <i class="fa fa-map-marker-alt text-muted"></i> Kochi, Kerala
+                        <i class="fa fa-chevron-down ms-auto text-muted small"></i>
                       </div>
                     </div>
                   </div>
@@ -512,9 +85,7 @@
                       <span class="field-label">Check In</span>
                       <div class="field-value">
                         <i class="far fa-calendar text-muted"></i> 02 Jan
-                        <i
-                          class="fa fa-chevron-down ms-auto text-muted small"
-                        ></i>
+                        <i class="fa fa-chevron-down ms-auto text-muted small"></i>
                       </div>
                     </div>
                   </div>
@@ -524,18 +95,13 @@
                       <span class="field-label">Check Out</span>
                       <div class="field-value">
                         <i class="far fa-calendar text-muted"></i> 02 Jan
-                        <i
-                          class="fa fa-chevron-down ms-auto text-muted small"
-                        ></i>
+                        <i class="fa fa-chevron-down ms-auto text-muted small"></i>
                       </div>
                     </div>
                   </div>
 
                   <div class="col-lg-2 col-md-4 text-end">
-                    <button
-                      type="submit"
-                      class="btn-search w-100 justify-content-center"
-                    >
+                    <button type="submit" class="btn-search w-100 justify-content-center">
                       <i class="fa fa-search"></i> Search
                     </button>
                   </div>
@@ -546,6 +112,7 @@
         </div>
       </div>
     </section>
+    
     <main id="drivers" class="container pb-5">
       <div class="row g-4 justify-content-center">
         <div class="col-lg-4 col-md-6">
@@ -554,204 +121,88 @@
               <div class="driver-card-front">
                 <div class="card-top-section">
                   <i class="far fa-heart favorite-icon"></i>
-                  <img
-                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&auto=format&fit=crop&q=60"
-                    class="profile-circle"
-                    alt="Glancy"
-                  />
-
+                  <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&auto=format&fit=crop&q=60" class="profile-circle" alt="Glancy" />
                   <div class="rating-badge">
                     <i class="fa fa-star text-warning me-1"></i> 4.96
                     <span class="text-muted fw-normal ms-1">(672 reviews)</span>
                   </div>
                 </div>
-
                 <div class="card-content-section">
                   <h3 class="driver-name">Glancy</h3>
-                  <p class="driver-loc">
-                    <i class="fa fa-map-marker-alt me-2"></i>Kochi
-                  </p>
-
+                  <p class="driver-loc"><i class="fa fa-map-marker-alt me-2"></i>Kochi</p>
                   <div class="spec-grid">
-                    <div class="spec-item">
-                      <i class="fa fa-car spec-icon"></i>
-                      <span>Kia Carens</span>
-                    </div>
-                    <div class="spec-item">
-                      <i class="fa fa-cogs spec-icon"></i>
-                      <span>Automatic</span>
-                    </div>
-                    <div class="spec-item">
-                      <i class="fa fa-language spec-icon"></i>
-                      <span>English, Malayalam</span>
-                    </div>
-                    <div class="spec-item">
-                      <i class="fa fa-chair spec-icon"></i> <span>5 seats</span>
-                    </div>
+                    <div class="spec-item"><i class="fa fa-car spec-icon"></i><span>Kia Carens</span></div>
+                    <div class="spec-item"><i class="fa fa-cogs spec-icon"></i><span>Automatic</span></div>
+                    <div class="spec-item"><i class="fa fa-language spec-icon"></i><span>English, Malayalam</span></div>
+                    <div class="spec-item"><i class="fa fa-chair spec-icon"></i> <span>5 seats</span></div>
                   </div>
-
                   <div class="card-actions">
-                    <a
-                      href="#"
-                      class="text-secondary text-decoration-none fw-bold small"
-                      >View Profile</a
-                    >
+                    <a href="#" class="text-secondary text-decoration-none fw-bold small">View Profile</a>
                     <a href="#" class="btn btn-book">Book Now</a>
                   </div>
                 </div>
               </div>
-
               <div class="driver-card-back">
                 <div class="review-header">
                   <h5 class="fw-bold">Recent Reviews</h5>
-                  <p class="text-muted small">
-                    What travelers say about Glancy
-                  </p>
+                  <p class="text-muted small">What travelers say about Glancy</p>
                 </div>
                 <div class="review-list">
                   <div class="review-item">
-                    <div class="review-stars">
-                      <i class="fa fa-star"></i><i class="fa fa-star"></i
-                      ><i class="fa fa-star"></i><i class="fa fa-star"></i
-                      ><i class="fa fa-star"></i>
-                    </div>
+                    <div class="review-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
                     <p class="mb-1 fw-bold text-dark">Excellent Drive!</p>
-                    <p class="mb-0 text-muted">
-                      "Glancy was extremely polite and the car was spotless.
-                      Highly recommend for family trips."
-                    </p>
-                  </div>
-                  <div class="review-item">
-                    <div class="review-stars">
-                      <i class="fa fa-star"></i><i class="fa fa-star"></i
-                      ><i class="fa fa-star"></i><i class="fa fa-star"></i
-                      ><i class="fa fa-star"></i>
-                    </div>
-                    <p class="mb-1 fw-bold text-dark">Very Professional</p>
-                    <p class="mb-0 text-muted">
-                      "Punctual and very safe driving. Knows Kochi roads very
-                      well."
-                    </p>
-                  </div>
-                  <div class="review-item">
-                    <div class="review-stars">
-                      <i class="fa fa-star"></i><i class="fa fa-star"></i
-                      ><i class="fa fa-star"></i><i class="fa fa-star"></i
-                      ><i class="fa fa-star-half-alt"></i>
-                    </div>
-                    <p class="mb-1 fw-bold text-dark">Good Experience</p>
-                    <p class="mb-0 text-muted">
-                      "Comfortable ride, although traffic was heavy. Glancy
-                      handled it well."
-                    </p>
+                    <p class="mb-0 text-muted">"Glancy was extremely polite and the car was spotless. Highly recommend for family trips."</p>
                   </div>
                 </div>
                 <div class="text-center mt-3">
-                  <a
-                    href="#"
-                    class="btn btn-outline-dark btn-sm rounded-pill px-4"
-                    >See All</a
-                  >
+                  <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-4">See All</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
+        
         <div class="col-lg-4 col-md-6">
-          <div class="driver-card-wrapper">
+             <div class="driver-card-wrapper">
             <div class="driver-card-inner">
               <div class="driver-card-front">
                 <div class="card-top-section">
                   <i class="far fa-heart favorite-icon"></i>
-                  <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=60"
-                    class="profile-circle"
-                    alt="Santhosh"
-                  />
-
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=60" class="profile-circle" alt="Santhosh" />
                   <div class="rating-badge">
                     <i class="fa fa-star text-warning me-1"></i> 4.96
                     <span class="text-muted fw-normal ms-1">(672 reviews)</span>
                   </div>
                 </div>
-
                 <div class="card-content-section">
                   <h3 class="driver-name">Santhosh</h3>
-                  <p class="driver-loc">
-                    <i class="fa fa-map-marker-alt me-2"></i>Kochi
-                  </p>
-
+                  <p class="driver-loc"><i class="fa fa-map-marker-alt me-2"></i>Kochi</p>
                   <div class="spec-grid">
-                    <div class="spec-item">
-                      <i class="fa fa-car spec-icon"></i>
-                      <span>Toyota Crysta</span>
-                    </div>
-                    <div class="spec-item">
-                      <i class="fa fa-cogs spec-icon"></i>
-                      <span>Automatic</span>
-                    </div>
-                    <div class="spec-item">
-                      <i class="fa fa-language spec-icon"></i>
-                      <span>English, Malayalam</span>
-                    </div>
-                    <div class="spec-item">
-                      <i class="fa fa-chair spec-icon"></i> <span>7 seats</span>
-                    </div>
+                    <div class="spec-item"><i class="fa fa-car spec-icon"></i><span>Toyota Crysta</span></div>
+                    <div class="spec-item"><i class="fa fa-cogs spec-icon"></i><span>Automatic</span></div>
+                    <div class="spec-item"><i class="fa fa-language spec-icon"></i><span>English, Malayalam</span></div>
+                    <div class="spec-item"><i class="fa fa-chair spec-icon"></i> <span>7 seats</span></div>
                   </div>
-
                   <div class="card-actions">
-                    <a
-                      href="#"
-                      class="text-secondary text-decoration-none fw-bold small"
-                      >View Profile</a
-                    >
+                    <a href="#" class="text-secondary text-decoration-none fw-bold small">View Profile</a>
                     <a href="#" class="btn btn-book">Book Now</a>
                   </div>
                 </div>
               </div>
-
               <div class="driver-card-back">
                 <div class="review-header">
                   <h5 class="fw-bold">Recent Reviews</h5>
-                  <p class="text-muted small">
-                    What travelers say about Santhosh
-                  </p>
+                  <p class="text-muted small">What travelers say about Santhosh</p>
                 </div>
                 <div class="review-list">
                   <div class="review-item">
-                    <div class="review-stars">
-                      <i class="fa fa-star"></i><i class="fa fa-star"></i
-                      ><i class="fa fa-star"></i><i class="fa fa-star"></i
-                      ><i class="fa fa-star"></i>
-                    </div>
+                    <div class="review-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
                     <p class="mb-1 fw-bold text-dark">Best Chauffeur!</p>
-                    <p class="mb-0 text-muted">
-                      "Santhosh is a gem. He knows the best local food spots and
-                      drives very smoothly."
-                    </p>
-                  </div>
-                  <div class="review-item">
-                    <div class="review-stars">
-                      <i class="fa fa-star"></i><i class="fa fa-star"></i
-                      ><i class="fa fa-star"></i><i class="fa fa-star"></i
-                      ><i class="fa fa-star"></i>
-                    </div>
-                    <p class="mb-1 fw-bold text-dark">
-                      Toyota Crysta was clean
-                    </p>
-                    <p class="mb-0 text-muted">
-                      "Car was in perfect condition. AC was effective. Great
-                      service."
-                    </p>
+                    <p class="mb-0 text-muted">"Santhosh is a gem. He knows the best local food spots and drives very smoothly."</p>
                   </div>
                 </div>
                 <div class="text-center mt-3">
-                  <a
-                    href="#"
-                    class="btn btn-outline-dark btn-sm rounded-pill px-4"
-                    >See All</a
-                  >
+                  <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-4">See All</a>
                 </div>
               </div>
             </div>
@@ -759,58 +210,32 @@
         </div>
 
         <div class="col-lg-4 col-md-6">
-          <div class="driver-card-wrapper">
+             <div class="driver-card-wrapper">
             <div class="driver-card-inner">
               <div class="driver-card-front">
                 <div class="card-top-section">
                   <i class="far fa-heart favorite-icon"></i>
-                  <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=60"
-                    class="profile-circle"
-                    alt="Babu Ganesh"
-                  />
-
+                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=60" class="profile-circle" alt="Babu Ganesh" />
                   <div class="rating-badge">
                     <i class="fa fa-star text-warning me-1"></i> 4.96
                     <span class="text-muted fw-normal ms-1">(672 reviews)</span>
                   </div>
                 </div>
-
                 <div class="card-content-section">
                   <h3 class="driver-name">Babu Ganesh</h3>
-                  <p class="driver-loc">
-                    <i class="fa fa-map-marker-alt me-2"></i>Kochi
-                  </p>
-
+                  <p class="driver-loc"><i class="fa fa-map-marker-alt me-2"></i>Kochi</p>
                   <div class="spec-grid">
-                    <div class="spec-item">
-                      <i class="fa fa-car spec-icon"></i>
-                      <span>Toyota Crysta</span>
-                    </div>
-                    <div class="spec-item">
-                      <i class="fa fa-cogs spec-icon"></i>
-                      <span>Automatic</span>
-                    </div>
-                    <div class="spec-item">
-                      <i class="fa fa-language spec-icon"></i>
-                      <span>English, Malayalam</span>
-                    </div>
-                    <div class="spec-item">
-                      <i class="fa fa-chair spec-icon"></i> <span>7 seats</span>
-                    </div>
+                    <div class="spec-item"><i class="fa fa-car spec-icon"></i><span>Toyota Crysta</span></div>
+                    <div class="spec-item"><i class="fa fa-cogs spec-icon"></i><span>Automatic</span></div>
+                    <div class="spec-item"><i class="fa fa-language spec-icon"></i><span>English, Malayalam</span></div>
+                    <div class="spec-item"><i class="fa fa-chair spec-icon"></i> <span>7 seats</span></div>
                   </div>
-
                   <div class="card-actions">
-                    <a
-                      href="pages/driver-profile.html"
-                      class="text-secondary text-decoration-none fw-bold small"
-                      >View Profile</a
-                    >
+                    <a href="pages/driver-profile.html" class="text-secondary text-decoration-none fw-bold small">View Profile</a>
                     <a href="#" class="btn btn-book">Book Now</a>
                   </div>
                 </div>
               </div>
-
               <div class="driver-card-back">
                 <div class="review-header">
                   <h5 class="fw-bold">Recent Reviews</h5>
@@ -818,131 +243,23 @@
                 </div>
                 <div class="review-list">
                   <div class="review-item">
-                    <div class="review-stars">
-                      <i class="fa fa-star"></i><i class="fa fa-star"></i
-                      ><i class="fa fa-star"></i><i class="fa fa-star"></i
-                      ><i class="fa fa-star"></i>
-                    </div>
+                    <div class="review-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
                     <p class="mb-1 fw-bold text-dark">Highly Recommended</p>
-                    <p class="mb-0 text-muted">
-                      "Babu was amazing. He speaks good English which helped us
-                      a lot."
-                    </p>
-                  </div>
-                  <div class="review-item">
-                    <div class="review-stars">
-                      <i class="fa fa-star"></i><i class="fa fa-star"></i
-                      ><i class="fa fa-star"></i><i class="fa fa-star"></i
-                      ><i class="fa fa-star"></i>
-                    </div>
-                    <p class="mb-1 fw-bold text-dark">
-                      Safe for Solo Travelers
-                    </p>
-                    <p class="mb-0 text-muted">
-                      "I felt very safe and comfortable. Professional conduct
-                      throughout."
-                    </p>
+                    <p class="mb-0 text-muted">"Babu was amazing. He speaks good English which helped us a lot."</p>
                   </div>
                 </div>
                 <div class="text-center mt-3">
-                  <a
-                    href="#"
-                    class="btn btn-outline-dark btn-sm rounded-pill px-4"
-                    >See All</a
-                  >
+                  <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-4">See All</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </main>
 
-    <footer class="pt-5 pb-3 border-top bg-light">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-2 col-md-4 col-6">
-            <h6 class="footer-heading">Company</h6>
-            <a href="#" class="footer-link">About us</a>
-            <a href="#" class="footer-link">Why Choose us</a>
-            <a href="pages/contact.html" class="footer-link">Contact us</a>
-            <a href="pages/contact.html" class="footer-link">Careers</a>
-            <a href="#" class="footer-link">Press</a>
-            <a href="#" class="footer-link">Partners</a>
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <h6 class="footer-heading">Travellers</h6>
-            <a href="#" class="footer-link">Book Chauffeur</a>
-            <a href="#" class="footer-link">Book Cabs</a>
-            <a href="#" class="footer-link">Book A Trip</a>
-            <a href="#" class="footer-link">Book Activity</a>
-            <a href="#" class="footer-link">Safety Guides</a>
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <h6 class="footer-heading">For Experts</h6>
-            <a href="pages/become-chauffeur.html" class="footer-link"
-              >Become Guide</a
-            >
-            <a href="#" class="footer-link">Become Tour Guide</a>
-            <a href="pages/become-transporter.html" class="footer-link"
-              >Become Transporter</a
-            >
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <h6 class="footer-heading">Customer Care</h6>
-            <p class="small text-muted mb-1">Call us:</p>
-            <p class="fw-bold mb-3">+91 94473 07190</p>
-            <p class="small text-muted mb-1">Email:</p>
-            <p class="fw-bold mb-3">care@chauffeur-guide.com</p>
-            <div
-              class="d-inline-block bg-success text-white px-2 py-1 rounded small"
-            >
-              ISO 9001:2015 CERTIFIED
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <h6 class="footer-heading">Follow Us</h6>
-            <div class="mb-3">
-              <a href="#" class="social-btn"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="#" class="social-btn"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" class="social-btn"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-            </div>
-            <small
-              class="text-muted d-block"
-              style="font-size: 0.75rem; line-height: 1.4"
-            >
-              Ministry of Tourism,<br />Govt of India Recognized
-            </small>
-          </div>
-        </div>
-
-        <div class="row mt-5 pt-3 border-top">
-          <div class="col-md-6 text-center text-md-start">
-            <small class="text-muted"
-              >© 2025 Mathew Voyages Pvt Ltd. All Rights Reserved.</small
-            >
-          </div>
-          <div class="col-md-6 text-center text-md-end">
-            <a
-              href="pages/terms-and-condition.html"
-              class="text-muted small me-3"
-              >Terms & Conditions</a
-            >
-            <a href="#" class="text-muted small">Cookie Policy</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
