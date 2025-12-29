@@ -7,273 +7,207 @@
 
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-
-      <!-- HEADER  -->
-    <nav class="navbar navbar-expand-xl bg-white shadow-sm sticky-top py-2">
-      <div class="container-fluid">
-       <a class="navbar-brand d-flex align-items-center" href="../index.html">
-          <img
-            src="../assets/logo/logo.png"
-            alt="Chauffeur Guide"
-            class="navbar-logo"
-          />
-        </a>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span
-            class="navbar-toggler-icon"
-            style="width: 1em; height: 1em"
-          ></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul
-            class="navbar-nav mx-auto mb-2 mb-xl-0 align-items-center"
-            style="font-size: 0.8rem"
-          >
-            <li class="nav-item">
-              <a class="nav-link text-dark fw-bold px-3" href="#"
-                >Chauffeur Guides</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark fw-bold px-3" href="#">Hire a Cab</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark fw-bold px-3" href="#"
-                >Trips in India</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark fw-bold px-3" href="#">Activities</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark fw-bold px-3" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark fw-bold px-3" href="#">FAQ</a>
-            </li>
-          </ul>
-
-          <div
-            class="d-flex flex-column flex-xl-row align-items-center gap-3 mt-3 mt-xl-0"
-          >
-            <div
-              class="d-flex align-items-center fw-bold text-dark"
-              style="font-size: 0.85rem"
-            >
-              <span
-                class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle me-2"
-                style="width: 26px; height: 26px"
-              >
-                <i class="fa fa-phone" style="font-size: 0.65rem"></i>
-              </span>
-              <span>+91 94473 07190</span>
-            </div>
-
-            <a
-              href="login.html"
-              class="btn btn-primary px-3 py-1 rounded-pill text-white fw-bold shadow-none border-0"
-              style="
-                font-size: 0.75rem;
-                min-width: 130px;
-                letter-spacing: 0.5px;
-              "
-            >
-              Login / Register
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-
-      <main>
+    <div id="header-placeholder"></div>
+    <main>
       <section class="page-hero">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-8">
-              <h1 class="display-6 fw-bold mb-3">FAQ</h1> </div>
+              <h1 class="display-6 fw-bold mb-3">FAQ</h1>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="py-5 px-4">
         <div class="container">
-            <h2 class="fw-bold mb-4">Frequently Asked Questions</h2> <div class="accordion" id="faqAccordion">
-                
-                <div class="accordion-item mb-3 border rounded shadow-sm">
-                    <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        What services do you offer? </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body text-muted small">
-                        We offer personalized and professional [insert service, e.g., travel coordination, tour planning, or product sales tailored to meet your specific needs. Our goal is to ensure a smooth and enjoyable experience from start to finish. </div>
-                    </div>
+          <h2 class="fw-bold mb-4">Frequently Asked Questions</h2>
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item mb-3 border rounded shadow-sm">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button fw-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  What services do you offer?
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body text-muted small">
+                  We offer personalized and professional [insert service, e.g.,
+                  travel coordination, tour planning, or product sales tailored
+                  to meet your specific needs. Our goal is to ensure a smooth
+                  and enjoyable experience from start to finish.
                 </div>
-
-                <div class="accordion-item mb-3 border rounded shadow-sm">
-                    <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        How can I make a booking or place an order? </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body text-muted small">
-                        Please contact us via the booking form or call our support line for assistance with bookings.
-                    </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item mb-3 border rounded shadow-sm">
-                    <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        What is your cancellation and refund policy? </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body text-muted small">
-                        Cancellation and refund policies vary depending on the service. Please refer to our Terms & Conditions for specific details.
-                    </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item mb-3 border rounded shadow-sm">
-                    <h2 class="accordion-header" id="headingFour">
-                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        How do I contact customer support? </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body text-muted small">
-                        You can reach us at care@chauffeur-guide.com or call +91 94473 07190.
-                    </div>
-                    </div>
-                </div>
-
-                 <div class="accordion-item mb-3 border rounded shadow-sm">
-                    <h2 class="accordion-header" id="headingFive">
-                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        Is my personal information secure? </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body text-muted small">
-                        Yes, we prioritize your data security. Please review our Privacy Policy for more information on how we protect your data.
-                    </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item mb-3 border rounded shadow-sm">
-                    <h2 class="accordion-header" id="headingSix">
-                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                        Do you offer customized packages or services? </button>
-                    </h2>
-                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body text-muted small">
-                        Yes, we specialize in customized tour packages. Contact our experts to plan your trip.
-                    </div>
-                    </div>
-                </div>
-
+              </div>
             </div>
 
-            <div class="bg-light p-5 rounded-3 mt-5 text-center">
-                <h4 class="fw-bold mb-3">Have Any Other Questions?</h4> <p class="text-muted mb-4">If you cannot find answer to your question in our FAQ, you can always contact us. We wil answer to you shortly!</p> <a href="#" class="btn btn-primary px-4 py-2 rounded-pill">Contact Us <i class="fa fa-angle-right ms-2"></i></a> </div>
+            <div class="accordion-item mb-3 border rounded shadow-sm">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed fw-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  How can I make a booking or place an order?
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body text-muted small">
+                  Please contact us via the booking form or call our support
+                  line for assistance with bookings.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 border rounded shadow-sm">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed fw-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  What is your cancellation and refund policy?
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body text-muted small">
+                  Cancellation and refund policies vary depending on the
+                  service. Please refer to our Terms & Conditions for specific
+                  details.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 border rounded shadow-sm">
+              <h2 class="accordion-header" id="headingFour">
+                <button
+                  class="accordion-button collapsed fw-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  How do I contact customer support?
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFour"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body text-muted small">
+                  You can reach us at care@chauffeur-guide.com or call +91 94473
+                  07190.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 border rounded shadow-sm">
+              <h2 class="accordion-header" id="headingFive">
+                <button
+                  class="accordion-button collapsed fw-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive"
+                >
+                  Is my personal information secure?
+                </button>
+              </h2>
+              <div
+                id="collapseFive"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFive"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body text-muted small">
+                  Yes, we prioritize your data security. Please review our
+                  Privacy Policy for more information on how we protect your
+                  data.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 border rounded shadow-sm">
+              <h2 class="accordion-header" id="headingSix">
+                <button
+                  class="accordion-button collapsed fw-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSix"
+                  aria-expanded="false"
+                  aria-controls="collapseSix"
+                >
+                  Do you offer customized packages or services?
+                </button>
+              </h2>
+              <div
+                id="collapseSix"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingSix"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body text-muted small">
+                  Yes, we specialize in customized tour packages. Contact our
+                  experts to plan your trip.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-light p-5 rounded-3 mt-5 text-center">
+            <h4 class="fw-bold mb-3">Have Any Other Questions?</h4>
+            <p class="text-muted mb-4">
+              If you cannot find answer to your question in our FAQ, you can
+              always contact us. We wil answer to you shortly!
+            </p>
+            <a href="#" class="btn btn-primary px-4 py-2 rounded-pill"
+              >Contact Us <i class="fa fa-angle-right ms-2"></i
+            ></a>
+          </div>
         </div>
       </section>
     </main>
-    <!-- FOOTER -->
-    <footer class="pt-5 pb-3 border-top">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-2 col-md-4 col-6">
-            <h6 class="footer-heading">Company</h6>
-            <a href="#" class="footer-link">About us</a>
-            <a href="#" class="footer-link">Why Choose us</a>
-            <a href="pages/contact.html" class="footer-link">Contact us</a>
-            <a href="pages/contact.html" class="footer-link">Careers</a>
-            <a href="#" class="footer-link">Press</a>
-            <a href="#" class="footer-link">Partners</a>
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <h6 class="footer-heading">Travellers</h6>
-            <a href="#" class="footer-link">Book Chauffeur</a>
-            <a href="#" class="footer-link">Book Cabs</a>
-            <a href="#" class="footer-link">Book A Trip</a>
-            <a href="#" class="footer-link">Book Activity</a>
-            <a href="#" class="footer-link">Safety Guides</a>
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <h6 class="footer-heading">For Experts</h6>
-            <a href="#" class="footer-link">Become Guide</a>
-            <a href="#" class="footer-link">Become Tour Guide</a>
-            <a href="#" class="footer-link">Become Transporter</a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <h6 class="footer-heading">Customer Care</h6>
-            <p class="small text-muted mb-1">Call us:</p>
-            <p class="fw-bold mb-3">+91 94473 07190</p>
-
-            <p class="small text-muted mb-1">Email:</p>
-            <p class="fw-bold mb-3">care@chauffeur-guide.com</p>
-
-            <div
-              class="d-inline-block bg-success text-white px-2 py-1 rounded small"
-            >
-              ISO 9001:2015 CERTIFIED
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <h6 class="footer-heading">Follow Us</h6>
-            <div class="mb-3">
-              <a href="#" class="social-btn"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="#" class="social-btn"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" class="social-btn"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-            </div>
-            <small
-              class="text-muted d-block"
-              style="font-size: 0.75rem; line-height: 1.4"
-            >
-              Ministry of Tourism,<br />Govt of India Recognized
-            </small>
-          </div>
-        </div>
-
-        <div class="row mt-5 pt-3 border-top">
-          <div class="col-md-6 text-center text-md-start">
-            <small class="text-muted"
-              >© 2025 Mathew Voyages Pvt Ltd. All Rights Reserved.</small
-            >
-          </div>
-          <div class="col-md-6 text-center text-md-end">
-            <a href="pages/terms-and-condition.html" class="text-muted small me-3">Terms & Conditions</a>
-            <a href="#" class="text-muted small">Cookie Policy</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-
+    <div id="footer-placeholder"></div>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/main.js"></script>
   </body>
