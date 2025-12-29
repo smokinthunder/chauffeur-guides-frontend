@@ -16,513 +16,806 @@
       rel="stylesheet"
     />
     <style>
+
+      /* Profile Image Styling */
       .profile-img-container {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 4px solid #fff;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      }
-      .profile-img-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .feature-badge {
-        background-color: #eef2ff;
-        color: #4f46e5;
-        font-size: 0.75rem;
-        padding: 5px 10px;
-        border-radius: 20px;
-        font-weight: 600;
-        margin-right: 5px;
-        margin-bottom: 5px;
+        position: relative;
         display: inline-block;
+        padding: 5px;
+        margin:10px;
+        border: 4px solid #e0e0e0;
+        border-radius: 50%;
       }
-      .amenity-icon {
-        width: 40px;
-        height: 40px;
-        background-color: #f8f9fa;
+      .profile-img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      /* Orange Icons (Left list) */
+      .icon-orange {
+        background-color: #e67e22; /* Burnt Orange */
+        color: white;
+        width: 28px; /* Slightly reduced size */
+        height: 28px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 8px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        font-size: 0.8rem; /* Smaller icon font */
+      }
+
+      /* Green Checkmarks (Right list) */
+      .icon-check {
+        background-color: #00b894; /* Vivid Green */
+        color: white;
+        width: 24px; /* Reduced size */
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        flex-shrink: 0;
+        font-size: 0.75rem;
+      }
+
+      .star-rating {
+        color: #f1c40f; /* Gold color */
+        font-size: 0.9rem;
+      }
+
+      .text-content {
+        font-size: 0.9rem; /* Reduced font size */
         color: #555;
-        margin-right: 15px;
+        line-height: 1.6;
       }
-      .rating-box {
-        background: #fff8e1;
-        border: 1px solid #ffecb3;
+
+      /* Typography adjustments */
+      .detail-item {
+        margin-bottom: 10px;
+        color: #555;
+        font-size: 0.9rem; /* Reduced font size */
+      }
+
+      .feature-text {
+        font-size: 0.85rem;
+      }
+      .custom-nav .nav-link {
+        color: #333; /* Dark text for inactive tabs */
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 50px; /* Pill shape */
+        margin-right: 10px;
+      }
+
+      .custom-nav .nav-link.active {
+        background-color: #e67e22 !important; /* Match your orange color */
+        color: white !important;
+      }
+
+      .custom-nav .nav-link:hover:not(.active) {
+        color: #e67e22; /* Orange text on hover */
+      }
+
+      .description-text p {
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem; /* Matches your reduced font size preference */
+      }
+      .quote-card {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 16px; /* Smooth rounded corners */
+        padding: 2rem;
+      }
+
+      .quote-card h3 {
+        font-weight: 700;
+        color: #1a1a1a;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-control {
+        background-color: #f8f9fa; /* Very light grey input bg */
+        border: 1px solid #e0e0e0;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
         border-radius: 8px;
-        padding: 20px;
-        text-align: center;
+        color: #495057;
       }
-      .review-card {
-        border-bottom: 1px solid #eee;
-        padding-bottom: 20px;
-        margin-bottom: 20px;
+
+      .form-control:focus {
+        box-shadow: none;
+        border-color: #e67e22;
       }
-      .review-card:last-child {
-        border-bottom: none;
-      }
-      .sticky-sidebar {
-        position: sticky;
-        top: 100px; /* Adjust based on navbar height */
-      }
-      .gallery-img {
-        height: 200px;
-        object-fit: cover;
-        width: 100%;
-        border-radius: 8px;
+
+      .add-stop-link {
+        display: block;
+        font-size: 0.85rem;
+        color: #666;
+        text-decoration: none;
+        margin: 5px 0 10px 5px;
         cursor: pointer;
-        transition: transform 0.3s;
       }
-      .gallery-img:hover {
-        transform: scale(1.02);
+
+      .add-stop-link:hover {
+        color: #e67e22;
+      }
+
+      .btn-quote {
+        background-color: #e67e22;
+        color: white;
+        font-weight: 600;
+        padding: 0.8rem;
+        border-radius: 50px;
+        width: 60%; /* Match image width approx */
+        border: none;
+        transition: all 0.3s;
+      }
+
+      .btn-quote:hover {
+        background-color: #d35400;
+        color: white;
+      }
+
+      /* --- WhatsApp Section --- */
+      .whatsapp-box {
+        margin-top: 1.5rem;
+      }
+
+      .wa-icon {
+        width: 45px;
+        height: 45px;
+        background-color: #25d366; /* WhatsApp Green */
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-right: 12px;
+      }
+
+      .wa-text span {
+        display: block;
+        font-size: 0.85rem;
+        color: #666;
+      }
+
+      .wa-text strong {
+        font-size: 1.1rem;
+        color: #222;
+      }
+
+      /* --- Vehicle Details Icons --- */
+      .feature-icon {
+        width: 24px;
+        height: 24px;
+        background-color: #2ecc71; /* Vivid Green */
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+      }
+
+      .feature-text {
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      /* --- Review Section Styling --- */
+      .review-summary-box {
+        background-color: #eee; /* Light grey background */
+        border-radius: 12px;
+        border: 1px solid #e0e0e0;
+      }
+
+      .review-score {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #222;
+      }
+
+      .reviewer-name {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #000;
+      }
+
+      .review-text {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .btn-read-reviews {
+        background-color: #e67e22;
+        color: white;
+        padding: 0.6rem 1.5rem;
+        border-radius: 50px;
+        border: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: background 0.3s;
+      }
+
+      .btn-read-reviews:hover {
+        background-color: #d35400;
+        color: white;
+      }
+
+      /* --- FAQ Icons --- */
+      .faq-icon {
+        width: 24px;
+        height: 24px;
+        background-color: #e67e22; /* Orange */
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+        margin-top: 3px; /* Align with text top */
+      }
+
+      .faq-question {
+        font-weight: 600;
+        color: #222;
+        font-size: 1.05rem;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+      }
+
+      .faq-answer {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.6;
       }
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-xl bg-white shadow-sm sticky-top py-2">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="../index.html">
-          <img
-            src="../assets/logo/logo.png"
-            alt="Chauffeur Guide"
-            class="navbar-logo"
-          />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto mb-2 mb-xl-0 align-items-center" style="font-size: 0.8rem">
-            <li class="nav-item"><a class="nav-link text-dark fw-bold px-3" href="#">Chauffeur Guides</a></li>
-            <li class="nav-item"><a class="nav-link text-dark fw-bold px-3" href="#">Hire a Cab</a></li>
-            <li class="nav-item"><a class="nav-link text-dark fw-bold px-3" href="#">Trips in India</a></li>
-            <li class="nav-item"><a class="nav-link text-dark fw-bold px-3" href="#">Activities</a></li>
-            <li class="nav-item"><a class="nav-link text-dark fw-bold px-3" href="#">Services</a></li>
-            <li class="nav-item"><a class="nav-link text-dark fw-bold px-3" href="#">FAQ</a></li>
-          </ul>
-          <div class="d-flex flex-column flex-xl-row align-items-center gap-3">
-             <div class="d-flex align-items-center fw-bold text-dark" style="font-size: 0.85rem">
-              <span class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle me-2" style="width: 26px; height: 26px">
-                <i class="fa fa-phone" style="font-size: 0.65rem"></i>
-              </span>
-              <span>+91 94473 07190</span>
+    <div id="header-placeholder"></div>
+    <main class="bg-light pb-4">
+      <section class="page-hero">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <h1 class="display-6 fw-bold mb-3">Request a Quote</h1>
             </div>
-            <a href="login.html" class="btn btn-primary px-3 py-1 rounded-pill text-white fw-bold shadow-none border-0" style="font-size: 0.75rem; min-width: 130px;">Login / Register</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="profile-card p-4 p-lg-5">
+          <div class="row align-items-start">
+            <div
+              class="col-lg-3 text-center mb-4 mb-lg-0 d-flex justify-content-start align-items-center"
+            >
+              <div class="profile-img-container">
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80"
+                  alt="Babu Ganesh"
+                  class="profile-img"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-9">
+              <div class="d-flex flex-wrap align-items-center mb-4">
+                <h2 class="fw-bold fs-3 me-3 mb-0">Babu Ganesh</h2>
+                <div class="d-flex align-items-center">
+                  <span class="star-rating me-2">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                  </span>
+                  <span class="text-muted small" style="font-size: 0.85rem"
+                    >(53 Reviews)</span
+                  >
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-5 mb-4 mb-md-0">
+                  <div class="d-flex align-items-start detail-item">
+                    <div class="icon-orange me-3">
+                      <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>Location: Kochi</div>
+                  </div>
+
+                  <div class="d-flex align-items-start detail-item">
+                    <div class="icon-orange me-3">
+                      <i class="fa-solid fa-language"></i>
+                    </div>
+                    <div>Languages: English / Hindi / Malayalam</div>
+                  </div>
+
+                  <div class="d-flex align-items-start detail-item">
+                    <div class="icon-orange me-3">
+                      <i class="fa-solid fa-car"></i>
+                    </div>
+                    <div>Vehicle Type: Car/Sedan Premium</div>
+                  </div>
+
+                  <div class="d-flex align-items-start detail-item">
+                    <div class="icon-orange me-3">
+                      <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <div>Vehicle Name: Toyota Crysta</div>
+                  </div>
+
+                  <div class="d-flex align-items-start detail-item">
+                    <div class="icon-orange me-3">
+                      <i class="fa-solid fa-suitcase"></i>
+                    </div>
+                    <div>
+                      Luggage Capacity:
+                      <span class="d-block text-muted small"
+                        >2 Checked Baggage</span
+                      >
+                      <span class="d-block text-muted small"
+                        >3 Cabin/Hand Baggage</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-7">
+                  <p class="text-content mb-4">
+                    With 12+ years of experience, Babu Ganesh is a professional
+                    chauffeur known for his reliability, safety, and excellent
+                    service. Fluent in English, Hindi, and Malayalam, he ensures
+                    smooth and comfortable travel, whether for business,
+                    leisure, or airport transfers. Rajesh's expertise in luxury
+                    vehicles and local routes guarantees a seamless journey
+                    every time.
+                  </p>
+
+                  <div class="row g-3">
+                    <div class="col-sm-6 d-flex align-items-center">
+                      <div class="icon-check me-2">
+                        <i class="fa-solid fa-check"></i>
+                      </div>
+                      <span class="text-secondary feature-text"
+                        >12+ years experience</span
+                      >
+                    </div>
+                    <div class="col-sm-6 d-flex align-items-center">
+                      <div class="icon-check me-2">
+                        <i class="fa-solid fa-check"></i>
+                      </div>
+                      <span class="text-secondary feature-text"
+                        >Multilingual Skills</span
+                      >
+                    </div>
+                    <div class="col-sm-6 d-flex align-items-center">
+                      <div class="icon-check me-2">
+                        <i class="fa-solid fa-check"></i>
+                      </div>
+                      <span class="text-secondary feature-text"
+                        >Familiar with South India tourist attractions and city
+                        routes</span
+                      >
+                    </div>
+                    <div class="col-sm-6 d-flex align-items-center">
+                      <div class="icon-check me-2">
+                        <i class="fa-solid fa-check"></i>
+                      </div>
+                      <span class="text-secondary feature-text"
+                        >Personalized Tours experience</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </nav>
 
-    <main class="bg-light py-4">
-      <div class="container">
-        
-        <nav aria-label="breadcrumb" class="mb-4">
-          <ol class="breadcrumb small">
-            <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Home</a></li>
-            <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Chauffeur Guides</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Babu Ganesh</li>
-          </ol>
-        </nav>
+      <div class="container py-5">
+        <div class="row g-5"> <div class="col-lg-7">
+            <div class="mt-2">
+              <ul class="nav custom-nav mb-3" id="profileTabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Chauffeur Guide Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Vehicle Details</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Reviews</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">FAQ</a>
+                </li>
+              </ul>
 
-        <div class="row g-4">
-          <div class="col-lg-8">
-            
-            <div class="card shadow-sm border-0 mb-4">
-              <div class="card-body p-4">
-                <div class="d-flex flex-column flex-md-row gap-4 align-items-start">
-                  <div class="profile-img-container flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=60" alt="Babu Ganesh">
-                  </div>
-                  
-                  <div class="flex-grow-1">
-                    <div class="d-flex justify-content-between align-items-start">
-                      <div>
-                        [cite_start]<h2 class="fw-bold mb-1">Babu Ganesh [cite: 434]</h2>
-                        <div class="text-warning small mb-2">
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          [cite_start]<span class="text-muted ms-1 text-decoration-underline">(3 Reviews)</span> [cite: 434]
-                        </div>
-                        [cite_start]<p class="text-muted small mb-1"><i class="fa fa-map-marker-alt me-2 text-danger"></i> Location: <strong>Kochi</strong> [cite: 434]</p>
-                        [cite_start]<p class="text-muted small mb-1"><i class="fa fa-language me-2 text-primary"></i> Languages: <strong>English / Hindi / Malayalam</strong> [cite: 435]</p>
-                      </div>
-                      <div class="text-end d-none d-md-block">
-                        <span class="badge bg-success bg-opacity-10 text-success border border-success px-3 py-2 rounded-pill">Verified Driver</span>
-                      </div>
-                    </div>
+              <hr class="text-secondary opacity-25 mb-4" />
 
-                    <hr class="my-3 opacity-25">
-
-                    <div class="row g-2 small">
-                      <div class="col-md-6">
-                        [cite_start]<p class="mb-1 text-muted">Vehicle Type: <span class="fw-bold text-dark">Car / Sedan Premium</span> [cite: 435]</p>
-                        [cite_start]<p class="mb-0 text-muted">Vehicle Name: <span class="fw-bold text-dark">Toyota Crysta</span> [cite: 436]</p>
-                      </div>
-                      <div class="col-md-6">
-                         [cite_start]<p class="mb-1 text-muted"><i class="fa fa-suitcase me-2"></i> 2 Checked Baggage [cite: 437]</p>
-                         [cite_start]<p class="mb-0 text-muted"><i class="fa fa-briefcase me-2"></i> Cabin / Hand Baggage [cite: 438]</p>
-                      </div>
-                    </div>
-                    
-                    <div class="mt-3">
-                      [cite_start]<span class="feature-badge"><i class="fa fa-check-circle me-1"></i> 12+ years experience [cite: 442]</span>
-                      [cite_start]<span class="feature-badge"><i class="fa fa-map me-1"></i> Familiar with City Routes [cite: 442]</span>
-                      [cite_start]<span class="feature-badge"><i class="fa fa-comments me-1"></i> Multilingual Skills [cite: 443]</span>
-                    </div>
-
-                  </div>
+              <div class="row">
+                <div class="col-lg-12 description-text">
+                  <p>
+                    Babu Ganesh is a professional chauffeur with over 12 years of
+                    experience in delivering safe, reliable, and comfortable
+                    journeys. Known for his punctuality and impeccable driving
+                    skills, Ganesh takes pride in providing top-notch service to
+                    clients from all walks of life.
+                  </p>
+                  <p>
+                    Ganesh is well-versed in navigating major cities and remote
+                    areas across India, ensuring timely arrivals and hassle-free
+                    travel. His warm and courteous demeanor makes every journey
+                    enjoyable. Fluent in English, Hindi, and Malayalam, he bridges
+                    communication gaps effortlessly.
+                  </p>
+                  <p>
+                    Ganesh prioritizes passenger safety and comfort, ensuring
+                    every trip is a memorable experience. Whether it's an airport
+                    transfer, business meeting, or leisure travel, Ganesh is
+                    committed to making your journey exceptional.
+                  </p>
                 </div>
               </div>
-              
-              <div class="card-footer bg-white border-top">
-                <nav class="nav nav-pills nav-fill small fw-bold">
-                  <a class="nav-link text-dark" href="#about">About</a>
-                  <a class="nav-link text-dark" href="#gallery">Gallery</a>
-                  <a class="nav-link text-dark" href="#vehicle">Vehicle Details</a>
-                  <a class="nav-link text-dark" href="#reviews">Reviews</a>
-                  <a class="nav-link text-dark" href="#faq">FAQ</a>
-                </nav>
+            </div>
+            <div class="mb-5 mt-4">
+              <h3 class="fw-bold mb-3">Gallery</h3>
+              <div class="card border-0 rounded-4 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Toyota Crysta"
+                  class="img-fluid w-100"
+                  style="object-fit: cover; max-height: 400px"
+                />
               </div>
             </div>
 
-            <div id="about" class="card shadow-sm border-0 mb-4">
-              <div class="card-body p-4">
-                <h5 class="fw-bold mb-3">About the Chauffeur</h5>
-                <p class="text-muted small">
-                  With 12+ years of experience, Babu Ganesh is a professional chauffeur known for his reliability, safety, and excellent service. [cite_start]Fluent in English, Hindi, and Malayalam, he ensures smooth and comfortable travel, whether for business, leisure, or airport transfers. [cite: 439-440]
+            <div class="mb-5">
+              <h3 class="fw-bold mb-4">Vehicle Details</h3>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="feature-icon me-2">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span class="feature-text">Air Conditioned</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="feature-icon me-2">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span class="feature-text">First-aid kit</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="feature-icon me-2">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span class="feature-text">WiFi</span>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="feature-icon me-2">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span class="feature-text">Water bottles and tissues</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="feature-icon me-2">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span class="feature-text">Charging ports</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="feature-icon me-2">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span class="feature-text">Make Year: 2024</span>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="feature-icon me-2">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span class="feature-text">Plush, ergonomic seating</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="feature-icon me-2">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span class="feature-text">Comfortable for 1 - 3 Pax</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="feature-icon me-2">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span class="feature-text">Permitted passengers 7</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-5">
+              <h3 class="fw-bold mb-4">Reviews</h3>
+
+              <div class="review-summary-box p-4 text-center mb-4 w-75">
+                <h6 class="fw-bold mb-2">Customer Reviews & Ratings</h6>
+                <div class="review-score">4.9 / 5.0</div>
+                <div class="text-warning mb-2">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <div class="text-muted small">Based On 53 Reviews</div>
+              </div>
+
+              <div class="mb-4">
+                <div class="d-flex align-items-center mb-1">
+                  <span class="reviewer-name me-2">Joseph Massey</span>
+                  <span class="text-warning small">
+                    <i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i>
+                  </span>
+                </div>
+                <p class="review-text">
+                  Fantastic experience! Great car, perfect itinerary, and Babu
+                  Ganesh made the trip unforgettable. Five stars!
                 </p>
-                <p class="text-muted small">
-                  Ganesh is well-versed in navigating major cities and remote areas across India, ensuring timely arrivals and hassle-free travel. His warm and courteous demeanor makes every journey enjoyable. [cite_start]He prioritizes passenger safety and comfort, ensuring every trip is a memorable experience. [cite: 451-453]
+              </div>
+
+              <div class="mb-4">
+                <div class="d-flex align-items-center mb-1">
+                  <span class="reviewer-name me-2">Michael D</span>
+                  <span class="text-warning small">
+                    <i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star-half-stroke"></i>
+                  </span>
+                </div>
+                <p class="review-text">
+                  Excellent service! The car was spotless and comfortable, and
+                  Babu Ganesh ensured a smooth, safe journey. Highly recommended!
                 </p>
               </div>
+
+              <div class="mb-4">
+                <div class="d-flex align-items-center mb-1">
+                  <span class="reviewer-name me-2">Jane Alva</span>
+                  <span class="text-warning small">
+                    <i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star-half-stroke"></i>
+                  </span>
+                </div>
+                <p class="review-text">
+                  Outstanding service! The vehicle was luxurious and
+                  well-maintained, and Babu Ganesh's professionalism made the
+                  journey truly enjoyable.
+                </p>
+              </div>
+
+              <button class="btn btn-read-reviews">Read All Reviews</button>
             </div>
 
-            <div id="gallery" class="card shadow-sm border-0 mb-4">
-              <div class="card-body p-4">
-                [cite_start]<h5 class="fw-bold mb-3">Gallery [cite: 455]</h5>
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <img src="https://images.unsplash.com/photo-1626668893632-6f3a4466d22f?w=800&auto=format&fit=crop&q=60" class="gallery-img" alt="Toyota Crysta Exterior">
+            <div class="mb-5">
+              <h3 class="fw-bold mb-4">FAQ: Chauffeur Booking Process</h3>
+
+              <div class="d-flex align-items-start mb-4">
+                <div class="faq-icon me-3">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </div>
+                <div>
+                  <div class="faq-question">
+                    How do I find a chauffeur for my trip?
                   </div>
-                  <div class="col-md-6">
-                     <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&auto=format&fit=crop&q=60" class="gallery-img" alt="Car Interior">
-                  </div>
-                  <div class="col-md-4">
-                    <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&auto=format&fit=crop&q=60" class="gallery-img" alt="Scenic Drive">
-                  </div>
-                  <div class="col-md-4">
-                    <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?w=800&auto=format&fit=crop&q=60" class="gallery-img" alt="Car Detail">
-                  </div>
-                   <div class="col-md-4">
-                    <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?w=800&auto=format&fit=crop&q=60" class="gallery-img" alt="Road Trip">
-                  </div>
+                  <p class="faq-answer">
+                    Once you've planned your trip, visit
+                    [www.chauffeur-guide.com]. Enter your travel dates and
+                    destination details. You'll be able to browse through
+                    available chauffeur guides and request a quote.
+                  </p>
                 </div>
               </div>
-            </div>
 
-            <div id="vehicle" class="card shadow-sm border-0 mb-4">
-              <div class="card-body p-4">
-                [cite_start]<h5 class="fw-bold mb-4">Vehicle Details [cite: 469]</h5>
-                <div class="row g-4">
-                  <div class="col-md-6">
-                     <div class="d-flex align-items-center mb-3">
-                        <div class="amenity-icon"><i class="fa fa-snowflake"></i></div>
-                        <div>
-                          [cite_start]<p class="mb-0 fw-bold small">Air Conditioned [cite: 470]</p>
-                          <small class="text-muted">Climate control available</small>
-                        </div>
-                     </div>
-                     <div class="d-flex align-items-center mb-3">
-                        <div class="amenity-icon"><i class="fa fa-wifi"></i></div>
-                        <div>
-                          [cite_start]<p class="mb-0 fw-bold small">WiFi [cite: 472]</p>
-                          <small class="text-muted">High speed internet</small>
-                        </div>
-                     </div>
-                      <div class="d-flex align-items-center mb-3">
-                        <div class="amenity-icon"><i class="fa fa-bolt"></i></div>
-                        <div>
-                          [cite_start]<p class="mb-0 fw-bold small">Charging ports [cite: 473]</p>
-                          <small class="text-muted">USB & Type-C</small>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="amenity-icon"><i class="fa fa-medkit"></i></div>
-                        <div>
-                          [cite_start]<p class="mb-0 fw-bold small">First aid kit [cite: 471]</p>
-                          <small class="text-muted">Standard safety kit</small>
-                        </div>
-                     </div>
-                     <div class="d-flex align-items-center mb-3">
-                        <div class="amenity-icon"><i class="fa fa-wine-bottle"></i></div>
-                        <div>
-                          [cite_start]<p class="mb-0 fw-bold small">Water bottles & Tissues [cite: 473]</p>
-                          <small class="text-muted">Complimentary</small>
-                        </div>
-                     </div>
-                      <div class="d-flex align-items-center mb-3">
-                        <div class="amenity-icon"><i class="fa fa-chair"></i></div>
-                        <div>
-                          [cite_start]<p class="mb-0 fw-bold small">Plush, ergonomic seating [cite: 475]</p>
-                          [cite_start]<small class="text-muted">Max 7 Passengers [cite: 475]</small>
-                        </div>
-                     </div>
-                  </div>
+              <div class="d-flex align-items-center mb-3">
+                <div class="faq-icon me-3">
+                  <i class="fa-solid fa-arrow-right"></i>
                 </div>
-                <div class="bg-light p-3 rounded mt-3">
-                   [cite_start]<p class="mb-0 small fw-bold">Make Year: 2024 [cite: 474] [cite_start]<span class="mx-2 text-muted">|</span> License Plate: KL07CL7994 [cite: 468]</p>
+                <div class="faq-question mb-0">
+                  What happens after I request a quote?
                 </div>
               </div>
-            </div>
 
-            <div id="reviews" class="card shadow-sm border-0 mb-4">
-              <div class="card-body p-4">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                  [cite_start]<h5 class="fw-bold mb-0">Reviews [cite: 476]</h5>
-                  [cite_start]<a href="#" class="small text-primary fw-bold text-decoration-none">Read All Reviews [cite: 488]</a>
+              <div class="d-flex align-items-center mb-3">
+                <div class="faq-icon me-3">
+                  <i class="fa-solid fa-arrow-right"></i>
                 </div>
+                <div class="faq-question mb-0">How do I confirm my booking?</div>
+              </div>
 
-                <div class="row align-items-center mb-4">
-                  <div class="col-md-4">
-                    <div class="rating-box">
-                      [cite_start]<h2 class="display-4 fw-bold mb-0 text-dark">4.9</h2> [cite: 478]
-                      <div class="text-warning small mb-1">
-                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i>
-                      </div>
-                      <small class="text-muted">Customer Rating</small>
-                    </div>
-                  </div>
-                  <div class="col-md-8">
-                     <div class="review-card">
-                        <div class="d-flex justify-content-between mb-2">
-                          [cite_start]<h6 class="fw-bold mb-0">Joseph Massey [cite: 480]</h6>
-                          <div class="text-warning small"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                        </div>
-                        [cite_start]<p class="text-muted small mb-0">"Fantastic experience! Great car, perfect itinerary, and Babu Ganesh made the trip unforgettable. Five stars!" [cite: 481]</p>
-                     </div>
-                     <div class="review-card">
-                        <div class="d-flex justify-content-between mb-2">
-                          [cite_start]<h6 class="fw-bold mb-0">Michael D [cite: 482]</h6>
-                          <div class="text-warning small"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                        </div>
-                        [cite_start]<p class="text-muted small mb-0">"Excellent service. The car was spotless and comfortable, and Babu Ganesh ensured a smooth safe journey. Highly recommended!" [cite: 484]</p>
-                     </div>
-                     <div class="review-card mb-0 border-0 pb-0">
-                        <div class="d-flex justify-content-between mb-2">
-                          [cite_start]<h6 class="fw-bold mb-0">Jane Alva [cite: 485]</h6>
-                          <div class="text-warning small"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                        </div>
-                        [cite_start]<p class="text-muted small mb-0">"Outstanding service! The vehicle was luxurious and well-maintained, and Babu Ganesh's professionalism made the journey truly enjoyable." [cite: 487]</p>
-                     </div>
-                  </div>
+              <div class="d-flex align-items-center mb-3">
+                <div class="faq-icon me-3">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                <div class="faq-question mb-0">
+                  When do I need to pay the remaining amount?
                 </div>
               </div>
-            </div>
 
-            <div id="faq" class="card shadow-sm border-0 mb-4">
-              <div class="card-body p-4">
-                [cite_start]<h5 class="fw-bold mb-4">FAQ: Chauffeur Booking Process [cite: 489]</h5>
-                <div class="accordion accordion-flush" id="faqProfile">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                        [cite_start]How do I find a chauffeur for my trip? [cite: 490]
-                      </button>
-                    </h2>
-                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqProfile">
-                      <div class="accordion-body text-muted small">
-                        Once you've planned your trip, visit www.chauffeur-guide.com. Enter your travel dates and destination details. [cite_start]You'll be able to browse through available chauffeur guides and request a quote. [cite: 491-492]
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                        [cite_start]What happens after I request a quote? [cite: 493]
-                      </button>
-                    </h2>
-                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqProfile">
-                      <div class="accordion-body text-muted small">
-                        Our team will review your itinerary and availability and send you a detailed quote via email.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                         [cite_start]How do I confirm my booking? [cite: 494]
-                      </button>
-                    </h2>
-                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqProfile">
-                      <div class="accordion-body text-muted small">
-                         Confirm via the link in your email quote and proceed with the deposit payment.
-                      </div>
-                    </div>
-                  </div>
+              <div class="d-flex align-items-center mb-3">
+                <div class="faq-icon me-3">
+                  <i class="fa-solid fa-arrow-right"></i>
                 </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-4">
-            <div class="sticky-sidebar">
-              <div class="card shadow border-0">
-                <div class="card-header bg-primary text-white py-3">
-                  [cite_start]<h5 class="mb-0 fw-bold fs-6"><i class="fa fa-paper-plane me-2"></i>Request a Quote [cite: 433]</h5>
-                </div>
-                <div class="card-body p-4">
-                  <form>
-                    <div class="mb-3">
-                      [cite_start]<label class="form-label small fw-bold">Pick up Location [cite: 456]</label>
-                      <input type="text" class="form-control form-control-sm" placeholder="e.g. Airport or Hotel">
-                    </div>
-                    
-                    <div class="mb-3">
-                        [cite_start]<a href="#" class="text-primary small text-decoration-none"><i class="fa fa-plus-circle me-1"></i> Click here to add a stop [cite: 457]</a>
-                    </div>
-
-                    <div class="mb-3">
-                      [cite_start]<label class="form-label small fw-bold">Drop Off Location [cite: 458]</label>
-                      <input type="text" class="form-control form-control-sm" placeholder="Enter destination">
-                    </div>
-
-                    <div class="row g-2 mb-3">
-                      <div class="col-6">
-                        [cite_start]<label class="form-label small fw-bold">Start Date [cite: 459]</label>
-                        <input type="date" class="form-control form-control-sm" value="2025-10-11">
-                      </div>
-                      <div class="col-6">
-                        [cite_start]<label class="form-label small fw-bold">End Date [cite: 464]</label>
-                        <input type="date" class="form-control form-control-sm" value="2025-10-21">
-                      </div>
-                    </div>
-
-                    <div class="row g-2 mb-3">
-                         <div class="col-6">
-                            [cite_start]<label class="form-label small fw-bold">First Name [cite: 460]</label>
-                            <input type="text" class="form-control form-control-sm">
-                         </div>
-                         <div class="col-6">
-                            [cite_start]<label class="form-label small fw-bold">Last Name [cite: 465]</label>
-                            <input type="text" class="form-control form-control-sm">
-                         </div>
-                    </div>
-
-                    <div class="mb-3">
-                         [cite_start]<label class="form-label small fw-bold">Country [cite: 461]</label>
-                         <select class="form-select form-select-sm">
-                             [cite_start]<option selected>France (+33)</option> [cite: 462]
-                             <option>India (+91)</option>
-                             <option>USA (+1)</option>
-                         </select>
-                    </div>
-
-                    <div class="mb-3">
-                        [cite_start]<label class="form-label small fw-bold">Email [cite: 466]</label>
-                        <input type="email" class="form-control form-control-sm">
-                    </div>
-
-                    <div class="mb-3">
-                        [cite_start]<label class="form-label small fw-bold">Phone Number [cite: 467]</label>
-                        <input type="tel" class="form-control form-control-sm">
-                    </div>
-
-                    <div class="mb-3">
-                        [cite_start]<label class="form-label small fw-bold">Your message [cite: 463]</label>
-                        <textarea class="form-control form-control-sm" rows="3"></textarea>
-                    </div>
-
-                    [cite_start]<button type="submit" class="btn btn-warning text-white w-100 fw-bold mb-3 shadow-sm">Submit Quote Request [cite: 499]</button>
-
-                    <a href="#" class="btn btn-success w-100 btn-sm text-white shadow-sm">
-                        [cite_start]<i class="fab fa-whatsapp me-2"></i> Chat with us: +91 94473 07190 [cite: 500]
-                    </a>
-                  </form>
+                <div class="faq-question mb-0">
+                  What should I do if I haven't received my quote within 24 hours?
                 </div>
               </div>
             </div>
           </div>
-          
+          <div class="col-lg-5">
+            <div class="quote-card">
+              <h3 class="text-center">Request A Quote</h3>
+
+              <form>
+                <div class="mb-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Pick up Location"
+                  />
+                </div>
+
+                <a href="#" class="add-stop-link">
+                  <i class="fa-solid fa-plus small me-1"></i> Click here to add a
+                  stop
+                </a>
+
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Drop Off Location"
+                  />
+                </div>
+
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <label class="form-label small text-muted mb-1"
+                      >Start Date</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="11-10-2025"
+                      onfocus="(this.type='date')"
+                      onblur="(this.type='text')"
+                    />
+                  </div>
+                  <div class="col-6">
+                    <label class="form-label small text-muted mb-1"
+                      >End Date</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="21-10-2025"
+                      onfocus="(this.type='date')"
+                      onblur="(this.type='text')"
+                    />
+                  </div>
+                </div>
+
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="First Name"
+                    />
+                  </div>
+                  <div class="col-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Last Name"
+                    />
+                  </div>
+                </div>
+
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Country"
+                    />
+                  </div>
+                  <div class="col-6">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Email"
+                    />
+                  </div>
+                </div>
+
+                <div class="row g-2 mb-3">
+                  <div class="col-5">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="France(+33)"
+                    />
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="tel"
+                      class="form-control"
+                      placeholder="Phone Number"
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <textarea
+                    class="form-control"
+                    rows="4"
+                    placeholder="Your message"
+                  ></textarea>
+                </div>
+
+                <div class="text-center">
+                  <button type="button" class="btn btn-quote">
+                    Submit Quote Request
+                    <i class="fa-solid fa-arrow-right ms-2"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div
+              class="whatsapp-box d-flex align-items-center justify-content-center"
+            >
+              <div class="wa-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div class="wa-text">
+                <span>Chat with us</span>
+                <strong>+91 94473 07190</strong>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
-
-    <footer class="pt-5 pb-3 border-top bg-white">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-2 col-md-4 col-6">
-            <h6 class="footer-heading">Company</h6>
-            <a href="#" class="footer-link">About us</a>
-            <a href="#" class="footer-link">Why Choose us</a>
-            <a href="pages/contact.html" class="footer-link">Contact us</a>
-            <a href="pages/contact.html" class="footer-link">Careers</a>
-            <a href="#" class="footer-link">Press</a>
-            <a href="#" class="footer-link">Partners</a>
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <h6 class="footer-heading">Travellers</h6>
-            <a href="#" class="footer-link">Book Chauffeur</a>
-            <a href="#" class="footer-link">Book Cabs</a>
-            <a href="#" class="footer-link">Book A Trip</a>
-            <a href="#" class="footer-link">Book Activity</a>
-            <a href="#" class="footer-link">Safety Guides</a>
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <h6 class="footer-heading">For Experts</h6>
-            <a href="#" class="footer-link">Become Guide</a>
-            <a href="#" class="footer-link">Become Tour Guide</a>
-            <a href="#" class="footer-link">Become Transporter</a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <h6 class="footer-heading">Customer Care</h6>
-            <p class="small text-muted mb-1">Call us:</p>
-            <p class="fw-bold mb-3">+91 94473 07190</p>
-            <p class="small text-muted mb-1">Email:</p>
-            <p class="fw-bold mb-3">care@chauffeur-guide.com</p>
-            <div class="d-inline-block bg-success text-white px-2 py-1 rounded small">
-              ISO 9001:2015 CERTIFIED
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <h6 class="footer-heading">Follow Us</h6>
-            <div class="mb-3">
-              <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <small class="text-muted d-block" style="font-size: 0.75rem; line-height: 1.4">
-              Ministry of Tourism,<br />Govt of India Recognized
-            </small>
-          </div>
-        </div>
-
-        <div class="row mt-5 pt-3 border-top">
-          <div class="col-md-6 text-center text-md-start">
-            <small class="text-muted">© 2025 Mathew Voyages Pvt Ltd. All Rights Reserved.</small>
-          </div>
-          <div class="col-md-6 text-center text-md-end">
-            <a href="pages/terms-and-condition.html" class="text-muted small me-3">Terms & Conditions</a>
-            <a href="#" class="text-muted small">Cookie Policy</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
+    <div id="footer-placeholder"></div>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/main.js"></script>
   </body>
