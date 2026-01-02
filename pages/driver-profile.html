@@ -280,6 +280,94 @@
         font-size: 0.95rem;
         line-height: 1.6;
       }
+
+      /* --- Gallery Styling --- */
+      .gallery-item {
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 12px;
+        height: 150px; /* Uniform height for thumbnails */
+      }
+      
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+      
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s;
+      }
+      
+      .gallery-item:hover .video-overlay {
+        background: rgba(0, 0, 0, 0.1);
+      }
+      
+      .play-icon {
+        color: white;
+        font-size: 2rem;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid white;
+      }
+
+      /* Modal Styling */
+      .modal-content {
+        background-color: transparent;
+        border: none;
+      }
+      
+      .modal-body {
+        padding: 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .modal-body img, .modal-body video {
+        max-width: 100%;
+        max-height: 85vh;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      }
+
+      .btn-close-gallery {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        color: white;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        z-index: 1056;
+        opacity: 0.8;
+      }
+      
+      .btn-close-gallery:hover {
+        opacity: 1;
+        transform: scale(1.1);
+      }
     </style>
   </head>
   <body>
@@ -431,26 +519,26 @@
             <div class="mt-2">
               <ul class="nav custom-nav mb-3" id="profileTabs" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Chauffeur Guide Profile</a>
+                  <a class="nav-link active" href="#profile-section">Chauffeur Guide Profile</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Gallery</a>
+                  <a class="nav-link" href="#gallery-section">Gallery</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Vehicle Details</a>
+                  <a class="nav-link" href="#vehicle-details-section">Vehicle Details</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Reviews</a>
+                  <a class="nav-link" href="#reviews-section">Reviews</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">FAQ</a>
+                  <a class="nav-link" href="#faq-section">FAQ</a>
                 </li>
               </ul>
 
               <hr class="text-secondary opacity-25 mb-4" />
 
               <div class="row">
-                <div class="col-lg-12 description-text">
+                <div class="col-lg-12 description-text" id="profile-section">
                   <p>
                     Babu Ganesh is a professional chauffeur with over 12 years of
                     experience in delivering safe, reliable, and comfortable
@@ -474,19 +562,54 @@
                 </div>
               </div>
             </div>
-            <div class="mb-5 mt-4">
+            <div class="mb-5 mt-4" id="gallery-section">
               <h3 class="fw-bold mb-3">Gallery</h3>
-              <div class="card border-0 rounded-4 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Toyota Crysta"
-                  class="img-fluid w-100"
-                  style="object-fit: cover; max-height: 400px"
-                />
+              <div class="row g-3">
+                <!-- Image 1 -->
+                <div class="col-6 col-md-4">
+                  <div class="gallery-item" data-type="image" data-src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=400&auto=format&fit=crop" alt="Toyota Crysta Exterior" />
+                  </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="col-6 col-md-4">
+                  <div class="gallery-item" data-type="image" data-src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1770&auto=format&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=400&auto=format&fit=crop" alt="Car Interior" />
+                  </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="col-6 col-md-4">
+                   <div class="gallery-item" data-type="image" data-src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1721&auto=format&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=400&auto=format&fit=crop" alt="Scenic Route" />
+                  </div>
+                </div>
+                 <!-- Image 4 -->
+                <div class="col-6 col-md-4">
+                   <div class="gallery-item" data-type="image" data-src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1772&auto=format&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=400&auto=format&fit=crop" alt="Comfortable Travel" />
+                  </div>
+                </div>
+                <!-- Video Item -->
+                 <div class="col-6 col-md-4">
+                  <div class="gallery-item" data-type="video" data-src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_2MB.mp4">
+                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=400&auto=format&fit=crop" alt="Video Thumbnail" />
+                    <div class="video-overlay">
+                      <div class="play-icon">
+                        <i class="fa-solid fa-play" style="margin-left: 4px; font-size: 1.2rem;"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Image 6 -->
+                <div class="col-6 col-md-4">
+                   <div class="gallery-item" data-type="image" data-src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1770&auto=format&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=400&auto=format&fit=crop" alt="Happy Clients" />
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="mb-5">
+            <div class="mb-5" id="vehicle-details-section">
               <h3 class="fw-bold mb-4">Vehicle Details</h3>
               <div class="row g-3">
                 <div class="col-md-4">
@@ -554,7 +677,7 @@
               </div>
             </div>
 
-            <div class="mb-5">
+            <div class="mb-5" id="reviews-section">
               <h3 class="fw-bold mb-4">Reviews</h3>
 
               <div class="review-summary-box p-4 text-center mb-4 w-75">
@@ -625,7 +748,7 @@
               <button class="btn btn-read-reviews">Read All Reviews</button>
             </div>
 
-            <div class="mb-5">
+            <div class="mb-5" id="faq-section">
               <h3 class="fw-bold mb-4">FAQ: Chauffeur Booking Process</h3>
 
               <div class="d-flex align-items-start mb-4">
@@ -817,7 +940,89 @@
       </div>
     </main>
     <div id="footer-placeholder"></div>
+
+    <!-- Gallery Modal -->
+    <div class="modal fade" id="mediaModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <button type="button" class="btn-close-gallery" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-times"></i>
+          </button>
+          <div class="modal-body" id="modalBodyContent">
+            <!-- Content will be injected here -->
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/main.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabs = document.querySelectorAll("#profileTabs .nav-link");
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Remove active class from all tabs
+            tabs.forEach((t) => t.classList.remove("active"));
+            // Add active class to clicked tab
+            this.classList.add("active");
+
+            // Get target section
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+              const headerOffset = 80; // Adjust based on your header height
+              const elementPosition = targetSection.getBoundingClientRect().top;
+              const offsetPosition =
+                elementPosition + window.pageYOffset - headerOffset;
+
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // Gallery Interaction
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        const modalBody = document.getElementById("modalBodyContent");
+        const mediaModal = new bootstrap.Modal(document.getElementById("mediaModal"));
+
+        galleryItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            const type = this.getAttribute("data-type");
+            const src = this.getAttribute("data-src");
+            
+            modalBody.innerHTML = ""; // Clear previous content
+
+            if (type === "image") {
+              const img = document.createElement("img");
+              img.src = src;
+              img.alt = "Gallery Image";
+              modalBody.appendChild(img);
+            } else if (type === "video") {
+              const video = document.createElement("video");
+              video.src = src;
+              video.controls = true;
+              video.autoplay = true;
+              modalBody.appendChild(video);
+            }
+
+            mediaModal.show();
+          });
+        });
+        
+        // Clean up video when modal is closed
+        const modalElement = document.getElementById("mediaModal");
+        modalElement.addEventListener('hidden.bs.modal', function () {
+             modalBody.innerHTML = "";
+        });
+      });
+    </script>
   </body>
 </html>
