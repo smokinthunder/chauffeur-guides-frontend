@@ -421,7 +421,7 @@ a {
 
 /* 7. FOOTER STYLES */
 .certifications-section {
-  background-color: var(--color-off-white);
+  background-color: var(--color-white);
   padding: 60px 0; /* Increased slightly for breathing room */
   border-bottom: 1px solid #dee2e6;
 }
