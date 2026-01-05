@@ -923,7 +923,7 @@ a {
   padding: 15px 20px;
   overflow-x: auto;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.3);
+  background: transparent;
   border-radius: 0 0 8px 8px;
   scrollbar-width: thin;
   scrollbar-color: rgba(255,255,255,0.3) transparent;
