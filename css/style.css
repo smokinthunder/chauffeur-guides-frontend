@@ -790,6 +790,30 @@ a {
   color: #666;
   font-size: 0.95rem;
   line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; /* Adjust as needed or use JS for precise height */
+  margin-top: 10px;
+}
+
+.faq-item {
+  cursor: pointer;
+}
+
+.faq-icon i {
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon i {
+  transform: rotate(90deg);
+}
+
+.faq-question {
+  margin-bottom: 0; /* Remove default margin to handle it in parent/wrapper */
 }
 
 /* Gallery Styling */

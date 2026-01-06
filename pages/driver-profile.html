@@ -398,54 +398,99 @@
             <div class="mb-5" id="faq-section">
               <h3 class="fw-bold mb-4">FAQ: Chauffeur Booking Process</h3>
 
-              <div class="d-flex align-items-start mb-4">
-                <div class="faq-icon me-3">
-                  <i class="isax isax-arrow-down"></i>
-                </div>
-                <div>
-                  <div class="faq-question">
-                    How do I find a chauffeur for my trip?
+              <!-- FAQ Item 1 -->
+              <div class="faq-item mb-4">
+                <div class="d-flex align-items-start">
+                  <div class="faq-icon me-3">
+                    <i class="isax isax-arrow-right-1"></i>
                   </div>
-                  <p class="faq-answer">
-                    Once you've planned your trip, visit
-                    [www.chauffeur-guide.com]. Enter your travel dates and
-                    destination details. You'll be able to browse through
-                    available chauffeur guides and request a quote.
-                  </p>
+                  <div>
+                    <div class="faq-question">
+                      How do I find a chauffeur for my trip?
+                    </div>
+                    <div class="faq-answer">
+                      <p class="mb-0 pt-2">
+                        Once you've planned your trip, visit
+                        [www.chauffeur-guide.com]. Enter your travel dates and
+                        destination details. You'll be able to browse through
+                        available chauffeur guides and request a quote.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div class="d-flex align-items-center mb-3">
-                <div class="faq-icon me-3">
-                  <i class="isax isax-arrow-right-1"></i>
-                </div>
-                <div class="faq-question mb-0">
-                  What happens after I request a quote?
-                </div>
-              </div>
-
-              <div class="d-flex align-items-center mb-3">
-                <div class="faq-icon me-3">
-                  <i class="isax isax-arrow-right-1"></i>
-                </div>
-                <div class="faq-question mb-0">How do I confirm my booking?</div>
-              </div>
-
-              <div class="d-flex align-items-center mb-3">
-                <div class="faq-icon me-3">
-                  <i class="isax isax-arrow-right-1"></i>
-                </div>
-                <div class="faq-question mb-0">
-                  When do I need to pay the remaining amount?
+              <!-- FAQ Item 2 -->
+              <div class="faq-item mb-3">
+                <div class="d-flex align-items-start">
+                  <div class="faq-icon me-3">
+                    <i class="isax isax-arrow-right-1"></i>
+                  </div>
+                  <div class="w-100">
+                    <div class="faq-question">
+                      What happens after I request a quote?
+                    </div>
+                    <div class="faq-answer">
+                      <p class="mb-0 pt-2">
+                        After you submit a quote request, the chauffeur will review your itinerary and travel details. You will receive a personalized quote via email or the platform messaging system within 24 hours.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div class="d-flex align-items-center mb-3">
-                <div class="faq-icon me-3">
-                  <i class="isax isax-arrow-right-1"></i>
+              <!-- FAQ Item 3 -->
+              <div class="faq-item mb-3">
+                <div class="d-flex align-items-start">
+                  <div class="faq-icon me-3">
+                    <i class="isax isax-arrow-right-1"></i>
+                  </div>
+                  <div class="w-100">
+                    <div class="faq-question">How do I confirm my booking?</div>
+                    <div class="faq-answer">
+                      <p class="mb-0 pt-2">
+                        To confirm your booking, review the quote provided and proceed to payment. Once the initial deposit or full payment is processed, you will receive a booking confirmation with all the driver and trip details.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="faq-question mb-0">
-                  What should I do if I haven't received my quote within 24 hours?
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="faq-item mb-3">
+                <div class="d-flex align-items-start">
+                  <div class="faq-icon me-3">
+                    <i class="isax isax-arrow-right-1"></i>
+                  </div>
+                  <div class="w-100">
+                    <div class="faq-question">
+                      When do I need to pay the remaining amount?
+                    </div>
+                    <div class="faq-answer">
+                     <p class="mb-0 pt-2">
+                        The payment schedule depends on the specific terms of your booking. typically, a deposit is required to secure the booking, and the remaining balance can be paid closer to the trip date or directly to the chauffeur upon arrival.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="faq-item mb-3">
+                <div class="d-flex align-items-start">
+                  <div class="faq-icon me-3">
+                    <i class="isax isax-arrow-right-1"></i>
+                  </div>
+                  <div class="w-100">
+                    <div class="faq-question">
+                      What should I do if I haven't received my quote within 24 hours?
+                    </div>
+                    <div class="faq-answer">
+                      <p class="mb-0 pt-2">
+                        If you haven't received a quote within 24 hours, please check your spam folder. If it's not there, verify that your contact details were entered correctly or contact our support team for assistance.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -764,6 +809,43 @@
         modalElement.addEventListener('hidden.bs.modal', function () {
           modalBody.innerHTML = "";
         });
+      });
+
+      // FAQ Accordion Logic
+      document.addEventListener("DOMContentLoaded", function() {
+          const faqItems = document.querySelectorAll('.faq-item');
+
+          faqItems.forEach(item => {
+              const question = item.querySelector('.faq-question');
+              const iconContainer = item.querySelector('.faq-icon');
+              
+              item.addEventListener('click', function() {
+                  const isActive = this.classList.contains('active');
+                  
+                  // Close others
+                  faqItems.forEach(otherItem => {
+                      if (otherItem !== this) {
+                          otherItem.classList.remove('active');
+                          const otherAnswer = otherItem.querySelector('.faq-answer');
+                          if (otherAnswer) otherAnswer.style.maxHeight = null;
+                      }
+                  });
+
+                  if (!isActive) {
+                      this.classList.add('active');
+                      const answer = this.querySelector('.faq-answer');
+                      if (answer) {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                      }
+                  } else {
+                      this.classList.remove('active');
+                      const answer = this.querySelector('.faq-answer');
+                      if (answer) {
+                        answer.style.maxHeight = null;
+                      }
+                  }
+              });
+          });
       });
     </script>
   </body>
