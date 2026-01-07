@@ -24,7 +24,7 @@
 }
 
 html {
-  font-size: 75%; /* 12px base */
+  font-size: 100%; /* 16px base for maximum readability */
 }
 
 body {
@@ -49,6 +49,7 @@ h5,
 h6 {
   font-weight: 700;
   letter-spacing: -0.5px;
+  line-height: 1.3;
 }
 
 a {
@@ -61,18 +62,22 @@ a {
   background-color: var(--brand-primary);
   border-color: var(--brand-primary);
   color: var(--color-white);
-  padding: 10px 25px;
+  padding: 14px 32px;
   border-radius: var(--border-radius-btn);
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  box-shadow: 0 4px 15px rgba(235, 112, 36, 0.3);
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
   background-color: var(--brand-secondary);
   border-color: var(--brand-secondary);
   color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(235, 112, 36, 0.4);
 }
 
 .navbar-brand {
@@ -82,18 +87,63 @@ a {
   line-height: 1;
 }
 
-.nav-link {
+/* Header Navigation - Compact Single Line */
+.header-nav {
+  flex-wrap: nowrap;
+}
+
+.header-nav .nav-link {
   color: var(--brand-dark) !important;
   font-weight: 700;
   font-size: 0.8rem;
-  margin-right: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 8px 10px !important;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  margin-right: 0;
+}
+
+.header-nav .nav-link:hover,
+.header-nav .nav-link.active {
+  color: var(--brand-primary) !important;
+  background-color: rgba(235, 112, 36, 0.08);
+}
+
+/* Header Login Button - Large and Prominent */
+.btn-login {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  padding: 12px 24px !important;
+  border-radius: 50px !important;
+  white-space: nowrap;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+/* Header Phone Number */
+.header-phone {
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+/* General nav-link (for other pages) */
+.nav-link {
+  color: var(--brand-dark) !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 12px !important;
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: var(--brand-primary) !important;
+  background-color: rgba(235, 112, 36, 0.08);
 }
 
 .navbar-logo {
@@ -168,10 +218,10 @@ a {
 .search-tab {
   background-color: #000;
   color: #fff;
-  padding: 10px 25px;
+  padding: 12px 28px;
   border-radius: 30px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .search-field-group {
@@ -187,9 +237,10 @@ a {
 }
 
 .field-label {
-  font-size: 0.75rem;
-  color: #888;
-  margin-bottom: 5px;
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 6px;
   display: block;
 }
 
@@ -199,24 +250,28 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 
 .btn-search {
   background-color: #000;
   color: #fff;
   border-radius: 50px;
-  padding: 12px 30px;
-  font-weight: 600;
+  padding: 14px 35px;
+  font-weight: 700;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   gap: 10px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-search:hover {
-  background-color: #333;
+  background-color: #222;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* 5. DRIVER CARDS (3D Flip) */
@@ -324,7 +379,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #333;
   font-weight: 500;
   margin-bottom: 30px;
@@ -353,14 +408,15 @@ a {
   color: #000;
   font-weight: 700;
   border: none;
-  padding: 10px 25px;
+  padding: 12px 28px;
   border-radius: 30px;
-  font-size: 0.9rem;
-  transition: 0.3s;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .btn-book:hover {
-  background-color: var(--color-off-white);
+  background-color: var(--brand-primary);
+  color: #fff;
 }
 
 /* Back Side (Reviews) */
@@ -383,30 +439,31 @@ a {
 .review-item {
   background: var(--color-off-white);
   border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 10px;
-  font-size: 0.85rem;
+  padding: 16px;
+  margin-bottom: 12px;
+  font-size: 1rem;
 }
 .review-stars {
   color: var(--brand-primary);
-  font-size: 0.7rem;
-  margin-bottom: 5px;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
 }
 
 /* 6. INNER PAGES (Contact, Profile etc) */
 .page-hero {
   background-color: var(--color-off-white);
-  padding: 80px 0 60px;
+  padding: 100px 0 70px;
   text-align: center;
 }
 
 .contact-info-item {
   display: flex;
-  margin-bottom: 30px;
+  gap: 15px;
+  margin-bottom: 35px;
 }
 .contact-form-card {
   background: var(--color-white);
-  padding: 40px;
+  padding: 45px;
   border-radius: var(--border-radius-card);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border: 1px solid var(--border-light);
@@ -415,8 +472,15 @@ a {
 .form-control {
   background-color: var(--color-off-white);
   border: 1px solid var(--border-input);
-  padding: 12px;
-  border-radius: 8px;
+  padding: 16px 18px;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(235, 112, 36, 0.1);
 }
 
 /* 7. FOOTER STYLES */
@@ -429,9 +493,8 @@ a {
 /* --- Main Footer --- */
 .footer-main {
   background-color: var(--color-off-white);
-  /* We remove padding here and let the container handle spacing or use py classes */
-  padding: 60px 0 30px;
-  font-size: 0.9rem;
+  padding: 70px 0 35px;
+  font-size: 1rem;
 }
 
 .footer-logo {
@@ -442,12 +505,13 @@ a {
 /* --- Social Icons --- */
 .social-icons a {
   color: #333;
-  font-size: 20px;
-  margin-right: 15px;
-  transition: color 0.3s;
+  font-size: 24px;
+  margin-right: 18px;
+  transition: all 0.3s;
 }
 .social-icons a:hover {
   color: var(--brand-primary);
+  transform: translateY(-2px);
 }
 
 /* --- Contact Section Box --- */
@@ -497,9 +561,10 @@ a {
   color: #555;
   text-decoration: none;
   transition: color 0.3s;
+  font-size: 0.95rem;
 }
 .footer-links a:hover {
-  color: #007bff;
+  color: var(--brand-primary);
 }
 
 /* --- Footer Bottom --- */
@@ -594,20 +659,20 @@ a {
 }
 
 .text-content {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #555;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* Typography adjustments */
 .detail-item {
   margin-bottom: 10px;
   color: #555;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .feature-text {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
 /* Custom Navigation Tabs */
@@ -630,9 +695,9 @@ a {
 
 .description-text p {
   color: #555;
-  line-height: 1.7;
+  line-height: 1.75;
   margin-bottom: 1.5rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 /* Quote Card */
@@ -651,32 +716,46 @@ a {
 }
 
 .add-stop-link {
-  display: block;
-  font-size: 0.85rem;
-  color: #666;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--brand-primary);
   text-decoration: none;
-  margin: 5px 0 10px 5px;
+  margin: 10px 0 18px 5px;
+  padding: 10px 16px;
+  background-color: rgba(235, 112, 36, 0.1);
+  border: 1px dashed var(--brand-primary);
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .add-stop-link:hover {
-  color: var(--brand-primary);
+  background-color: rgba(235, 112, 36, 0.2);
+  border-style: solid;
+  color: var(--brand-secondary);
 }
 
 .btn-quote {
   background-color: var(--brand-primary);
   color: white;
-  font-weight: 600;
-  padding: 0.8rem;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 16px 24px;
   border-radius: 50px;
-  width: 60%;
+  width: 70%;
   border: none;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(235, 112, 36, 0.3);
 }
 
 .btn-quote:hover {
-  background-color: var(--brand-primary);
+  background-color: var(--brand-secondary);
   color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(235, 112, 36, 0.4);
 }
 
 /* WhatsApp Section */
@@ -699,13 +778,13 @@ a {
 
 .wa-text span {
   display: block;
-  font-size: 0.85rem;
-  color: #666;
+  font-size: 0.95rem;
+  color: #555;
 }
 
 .wa-text strong {
-  font-size: 1.1rem;
-  color: #222;
+  font-size: 1.2rem;
+  color: #111;
 }
 
 /* Vehicle Details Icons */
@@ -743,24 +822,27 @@ a {
 
 .review-text {
   color: #666;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .btn-read-reviews {
   background-color: var(--brand-primary);
   color: white;
-  padding: 0.6rem 1.5rem;
+  padding: 14px 28px;
   border-radius: 50px;
   border: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: background 0.3s;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(235, 112, 36, 0.3);
 }
 
 .btn-read-reviews:hover {
-  background-color: var(--brand-primary);
+  background-color: var(--brand-secondary);
   color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(235, 112, 36, 0.4);
 }
 
 /* FAQ Icons */
@@ -788,8 +870,8 @@ a {
 
 .faq-answer {
   color: #666;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.65;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
@@ -1015,4 +1097,84 @@ a {
   font-size: 0.5rem;
 }
 
+/* =========================================
+   9. BOOTSTRAP ACCORDION - ORANGE THEME
+   ========================================= */
+.accordion-item {
+  border: 1px solid var(--border-light);
+  background-color: var(--color-white);
+}
+
+.accordion-button {
+  font-size: 1rem;
+  padding: 1.1rem 1.25rem;
+  background-color: var(--color-white);
+  color: var(--brand-dark);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(235, 112, 36, 0.08);
+  color: var(--brand-primary);
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 0.2rem rgba(235, 112, 36, 0.25);
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23eb7024'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23eb7024'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+  padding: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* FAQ Page specific spacing */
+.faq-section-bottom {
+  margin-top: 100px;
+}
+
+/* Help Link - Orange Theme */
+.help-link {
+  color: var(--brand-primary) !important;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.help-link:hover {
+  color: var(--brand-secondary) !important;
+  transform: translateX(3px);
+}
+
+/* Form Label Improvements */
+.form-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Small text improvements - make all small text readable */
+.small, small {
+  font-size: 0.95rem !important;
+}
+
+/* Text muted improvements */
+.text-muted {
+  color: #666 !important;
+  font-size: inherit;
+}
 
