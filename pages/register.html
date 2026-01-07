@@ -30,7 +30,7 @@
       </div>
     </nav>
 
-    <main class="py-5 bg-light">
+    <main class="py-5 auth-bg">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-5 col-md-7">
@@ -65,8 +65,8 @@
                         class="form-control border-end-0"
                         placeholder="Enter Password"
                       />
-                      <span class="input-group-text bg-white border-start-0"
-                        ><i class="isax isax-eye-slash text-muted small"></i
+                      <span class="input-group-text password-toggle"
+                        ><i class="isax isax-eye-slash"></i
                       ></span>
                     </div>
                   </div>
@@ -80,8 +80,8 @@
                         class="form-control border-end-0"
                         placeholder="Enter Password"
                       />
-                      <span class="input-group-text bg-white border-start-0"
-                        ><i class="isax isax-eye-slash text-muted small"></i
+                      <span class="input-group-text password-toggle"
+                        ><i class="isax isax-eye-slash"></i
                       ></span>
                     </div>
                   </div>
@@ -96,14 +96,14 @@
                       class="form-check-label small text-muted"
                       for="termsCheck"
                       >I agree with the
-                      <a href="#" class="text-danger">Terms Of Service</a
+                      <a href="#" class="text-primary text-decoration-none">Terms Of Service</a
                       >.</label
                     >
                   </div>
 
                   <button
                     type="submit"
-                    class="btn btn-warning text-white w-100 py-2 fw-bold mb-3"
+                    class="btn btn-primary w-100 py-2 fw-bold mb-3"
                   >
                     Register <i class="isax isax-arrow-right-1 ms-1"></i>
                   </button>
@@ -118,15 +118,11 @@
                 </div>
 
                 <div class="d-flex gap-2">
-                  <button
-                    class="btn btn-light bg-light w-50 small text-muted border"
-                  >
-                    <i class="fab fa-google me-2 text-danger"></i> Google
+                  <button class="btn btn-social w-50">
+                    <i class="fab fa-google me-2"></i> Google
                   </button>
-                  <button
-                    class="btn btn-light bg-light w-50 small text-muted border"
-                  >
-                    <i class="fab fa-facebook-f me-2 text-primary"></i> Facebook
+                  <button class="btn btn-social w-50">
+                    <i class="fab fa-facebook-f me-2"></i> Facebook
                   </button>
                 </div>
 
@@ -136,7 +132,7 @@
                   </span>
                   <a
                     href="login.html"
-                    class="fw-bold text-danger small text-decoration-none"
+                    class="fw-bold text-primary small text-decoration-none"
                     >Sign In</a
                   >
                 </div>
@@ -149,5 +145,23 @@
     <div id="footer-placeholder"></div>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/main.js"></script>
+    <script>
+      // Password Toggle Functionality
+      document.querySelectorAll('.password-toggle').forEach(toggle => {
+        toggle.addEventListener('click', function() {
+          const input = this.previousElementSibling;
+          const icon = this.querySelector('i');
+          if (input.type === 'password') {
+            input.type = 'text';
+            icon.classList.remove('isax-eye-slash');
+            icon.classList.add('isax-eye');
+          } else {
+            input.type = 'password';
+            icon.classList.remove('isax-eye');
+            icon.classList.add('isax-eye-slash');
+          }
+        });
+      });
+    </script>
   </body>
 </html>

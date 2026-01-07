@@ -1178,3 +1178,82 @@ a {
   font-size: inherit;
 }
 
+/* Password Toggle Eye Icon - Orange Theme */
+.password-toggle {
+  background-color: var(--color-off-white) !important;
+  border-left: none !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.password-toggle i {
+  color: var(--brand-primary) !important;
+  font-size: 1rem;
+}
+
+.password-toggle:hover {
+  background-color: rgba(235, 112, 36, 0.1) !important;
+}
+
+.password-toggle:hover i {
+  color: var(--brand-secondary) !important;
+}
+
+/* Input group for password fields */
+.input-group .form-control:focus {
+  border-color: var(--brand-primary);
+  box-shadow: none;
+}
+
+.input-group .form-control:focus + .password-toggle {
+  border-color: var(--brand-primary);
+}
+
+/* Auth Pages - Social Buttons */
+.btn-social {
+  background-color: var(--color-off-white) !important;
+  border: 1px solid var(--border-light) !important;
+  color: var(--brand-dark) !important;
+  font-weight: 600;
+  padding: 12px 20px;
+  transition: all 0.2s ease;
+}
+
+.btn-social:hover {
+  background-color: rgba(235, 112, 36, 0.08) !important;
+  border-color: var(--brand-primary) !important;
+  color: var(--brand-primary) !important;
+}
+
+/* Auth Pages - Links */
+.auth-link {
+  color: var(--brand-primary) !important;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.auth-link:hover {
+  color: var(--brand-secondary) !important;
+}
+
+/* Auth Pages Background */
+.auth-bg {
+  background-color: var(--color-off-white) !important;
+}
+
+/* Checkbox - Orange Theme */
+.form-check-input:checked {
+  background-color: var(--brand-primary) !important;
+  border-color: var(--brand-primary) !important;
+}
+
+.form-check-input:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 0.2rem rgba(235, 112, 36, 0.25);
+}
+
+.form-check-input:checked:focus {
+  box-shadow: 0 0 0 0.2rem rgba(235, 112, 36, 0.25);
+}
+
