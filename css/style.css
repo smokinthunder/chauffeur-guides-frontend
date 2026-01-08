@@ -151,25 +151,14 @@ a {
 
 /* 4. HERO & SEARCH (Index Specific) */
 .hero-wrapper {
-  background: linear-gradient(105deg, #f3f4f6 0%, #ffffff 100%);
-  padding-top: 80px;
-  padding-bottom: 140px;
+  background: url('../assets/index/hero-bg.jpg') no-repeat center center/cover;
+  padding-top: 140px;
+  padding-bottom: 200px;
   position: relative;
   overflow: visible;
 }
 
-.hero-tag {
-  background-color: var(--brand-primary);
-  color: var(--color-white);
-  font-weight: 600;
-  padding: 8px 20px;
-  border-radius: 50px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.9rem;
-  margin-bottom: 25px;
-}
+/* Removed old .hero-tag, .hero-car-img */
 
 .hero-title {
   font-size: 3.5rem;
@@ -180,16 +169,22 @@ a {
 }
 
 .hero-subtitle {
-  color: #6c757d;
-  font-size: 1.25rem;
-  font-weight: 400;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-bottom: 0;
 }
 
-.hero-car-img {
-  max-width: 100%;
-  height: auto;
-  transform: scale(1.1);
+.feature-badge {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
 }
 
 .search-container {
@@ -1249,3 +1244,66 @@ a {
   box-shadow: 0 0 0 0.2rem rgba(235, 112, 36, 0.25);
 }
 
+/* =========================================
+   Features Grid Section
+   ========================================= */
+.features-grid-section {
+    background-color: white;
+    padding: 80px 0 160px 0;
+}
+
+.feature-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.feature-card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.feature-card-content {
+    padding: 25px;
+    text-align: center;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.feature-desc {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.feature-arrow-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.feature-arrow-btn:hover {
+    transform: scale(1.2);
+}
