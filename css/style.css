@@ -60,12 +60,20 @@ a {
 /* Card Link Wrapper - Makes entire card clickable without changing appearance */
 .card-link {
   display: block;
+  height: 100%;
   color: inherit;
   text-decoration: none;
 }
 .card-link:hover {
   color: inherit;
   text-decoration: none;
+}
+
+/* Ensure cards inside link wrappers maintain full height */
+.card-link .feature-card,
+.card-link .trip-card,
+.card-link .activity-card {
+  height: 100%;
 }
 
 /* 3. BUTTONS & NAV */
