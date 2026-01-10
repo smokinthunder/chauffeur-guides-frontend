@@ -1436,3 +1436,669 @@ a {
     line-height: 1.5;
     text-align: center;
 }
+
+/* =========================================
+   10. MOBILE RESPONSIVENESS
+   Only affects screens <= 768px
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* ----- HEADER / NAVBAR ----- */
+  .navbar {
+    padding: 10px 0;
+  }
+  
+  .navbar .container {
+    position: relative;
+  }
+  
+  .navbar-logo {
+    height: 32px;
+  }
+  
+  .navbar-toggler {
+    border: 2px solid var(--brand-primary);
+    padding: 6px 10px;
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+  
+  .header-nav {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 0 !important;
+    width: 100%;
+  }
+  
+  .header-nav .nav-item {
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .header-nav .nav-item:last-child {
+    border-bottom: none;
+  }
+  
+  .header-nav .nav-link {
+    padding: 14px 0 !important;
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+  }
+  
+  .header-actions {
+    flex-direction: column;
+    align-items: stretch !important;
+    width: 100%;
+    border: none !important;
+    border-top: 1px solid #f0f0f0 !important;
+    padding: 15px 0 0 0 !important;
+    margin: 10px 0 0 0 !important;
+    gap: 15px !important;
+  }
+  
+  .header-phone {
+    justify-content: center;
+  }
+  
+  .btn-login {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+  }
+  
+  /* ----- HERO SECTION ----- */
+  .hero-wrapper {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+    line-height: 1.25;
+    margin-bottom: 15px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-features {
+    margin-bottom: 20px;
+  }
+  
+  .hero-features .d-flex {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px !important;
+  }
+  
+  .feature-badge {
+    font-size: 0.75rem;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    justify-content: flex-start;
+    white-space: nowrap;
+  }
+  
+  .feature-badge i {
+    font-size: 0.7rem;
+    margin-right: 4px !important;
+  }
+  
+  .hero-trust {
+    justify-content: center;
+  }
+  
+  .hero-trust img {
+    height: 30px;
+  }
+  
+  /* ----- SEARCH CONTAINER ----- */
+  .search-container {
+    margin-top: -60px;
+    padding-bottom: 40px;
+  }
+  
+  .search-card {
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .search-header {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .search-tab {
+    width: 100%;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .search-field-group {
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .field-label {
+    font-size: 0.85rem;
+  }
+  
+  .field-value {
+    font-size: 0.95rem;
+  }
+  
+  .btn-search {
+    width: 100% !important;
+    justify-content: center;
+    padding: 12px 25px;
+  }
+  
+  /* ----- PAGE HERO / HEADINGS ----- */
+  .page-hero {
+    padding: 70px 0 50px;
+  }
+  
+  .page-hero h1,
+  .page-hero .display-6 {
+    font-size: 1.5rem !important;
+  }
+  
+  .driver-section-title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .driver-section-desc {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Section header layout on mobile */
+  .features-grid-section .row.align-items-center.mb-5 {
+    text-align: center;
+  }
+  
+  .features-grid-section .row.align-items-center.mb-5 .text-lg-end {
+    text-align: center !important;
+    margin-top: 15px;
+  }
+  
+  .features-grid-section {
+    padding: 50px 0;
+  }
+  
+  /* ----- FEATURE CARDS ----- */
+  .feature-card-img {
+    height: 180px;
+  }
+  
+  .feature-card-content {
+    padding: 20px;
+  }
+  
+  .feature-title {
+    font-size: 1.1rem;
+  }
+  
+  .feature-desc {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+  
+  /* ----- DRIVER CARDS ----- */
+  .driver-card-wrapper {
+    height: 480px;
+    margin-bottom: 20px;
+  }
+  
+  .card-top-section {
+    height: 180px;
+  }
+  
+  .profile-circle {
+    width: 110px;
+    height: 110px;
+  }
+  
+  .driver-name {
+    font-size: 1.1rem;
+  }
+  
+  .spec-grid {
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .card-content-section {
+    padding: 30px 20px 20px;
+  }
+  
+  /* ----- TRIP & ACTIVITY CARDS ----- */
+  .trip-img,
+  .activity-img {
+    height: 180px;
+  }
+  
+  .trip-content,
+  .activity-content {
+    padding: 15px;
+  }
+  
+  .trip-title,
+  .activity-title {
+    font-size: 1rem;
+  }
+  
+  .trip-meta {
+    font-size: 0.75rem;
+  }
+  
+  /* ----- FOOTER ----- */
+  .certifications-section {
+    padding: 30px 0;
+  }
+  
+  .certifications-section .col-6 {
+    margin-bottom: 15px;
+  }
+  
+  .certifications-section img {
+    max-height: 80px !important;
+  }
+  
+  .footer-main {
+    padding: 40px 0 20px;
+    text-align: center;
+  }
+  
+  .footer-logo {
+    max-width: 150px;
+    margin: 0 auto 15px;
+  }
+  
+  .social-icons {
+    justify-content: center;
+    display: flex;
+    margin-bottom: 25px;
+  }
+  
+  .contact-section-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .contact-section-box h5 {
+    font-size: 1.1rem;
+  }
+  
+  .contact-section-box .d-flex.flex-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px !important;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-icon {
+    margin: 0 auto 10px !important;
+  }
+
+  /* Fix contact page alignment on mobile */
+  .contact-info-item .contact-icon {
+    margin: 0 !important;
+  }
+  
+  .footer-heading {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+  
+  /* Footer columns */
+  .footer-main .row.justify-content-between > div {
+    text-align: center;
+  }
+  
+  .footer-bottom {
+    padding: 15px 0;
+  }
+  
+  .footer-bottom .row {
+    text-align: center;
+  }
+  
+  .footer-bottom .col-md-6 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+  
+  .payment-icons {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .payment-icons img {
+    height: 24px;
+    margin: 0 5px;
+  }
+  
+  .footer-bottom .d-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .scroll-top {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  /* ----- DRIVER PROFILE PAGE ----- */
+  
+  /* Profile header - photo in same row as name */
+  .profile-card .row.align-items-start {
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+  }
+  
+  .profile-card .col-lg-3 {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    padding-right: 15px;
+    margin-bottom: 0 !important;
+  }
+  
+  .profile-img-container {
+    margin: 0;
+    padding: 3px;
+    border-width: 2px;
+  }
+  
+  .profile-img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .profile-card .col-lg-9 {
+    flex: 1;
+    width: auto !important;
+  }
+  
+  .profile-card h2.fw-bold {
+    font-size: 1.2rem !important;
+    margin-bottom: 5px !important;
+  }
+  
+  .profile-card .star-rating {
+    font-size: 0.7rem;
+  }
+  
+  .profile-card .d-flex.flex-wrap.align-items-center.mb-4 {
+    margin-bottom: 15px !important;
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  
+  /* Detail items - compact layout */
+  .detail-item {
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+  }
+  
+  .icon-orange {
+    width: 22px;
+    height: 22px;
+    font-size: 0.65rem;
+  }
+  
+  .profile-card .col-md-5,
+  .profile-card .col-md-7 {
+    padding: 0;
+  }
+  
+  .text-content {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 15px !important;
+  }
+  
+  .icon-check {
+    width: 20px;
+    height: 20px;
+    font-size: 0.65rem;
+  }
+  
+  .feature-text {
+    font-size: 0.8rem;
+  }
+  
+  /* Navigation tabs - wrap to multiple lines */
+  .custom-nav {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .custom-nav .nav-link {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  /* Vehicle details - single column, no gaps */
+  #vehicle-details-section .row.g-3 {
+    margin: 0;
+  }
+  
+  #vehicle-details-section .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  #vehicle-details-section .d-flex.align-items-center.mb-3 {
+    margin-bottom: 8px !important;
+  }
+  
+  .feature-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 0.65rem;
+  }
+  
+  #vehicle-details-section .feature-text {
+    font-size: 0.85rem;
+  }
+  
+  /* Quote card */
+  .quote-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 30px;
+  }
+  
+  .quote-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .quote-card .form-control {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+  
+  .add-stop-link {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    margin: 8px 0 15px;
+  }
+  
+  /* Submit quote button - enhanced styling */
+  .btn-quote {
+    width: 100% !important;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    background: var(--brand-primary);
+    box-shadow: 0 8px 20px rgba(235, 112, 36, 0.35);
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-quote:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(235, 112, 36, 0.45);
+  }
+  
+  .btn-quote:active {
+    transform: translateY(-1px);
+  }
+  
+  /* WhatsApp box */
+  .whatsapp-box {
+    margin-top: 1rem;
+    padding: 15px;
+  }
+  
+  .wa-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+  
+  .wa-text span {
+    font-size: 0.85rem;
+  }
+  
+  .wa-text strong {
+    font-size: 1rem;
+  }
+  
+  /* Reviews section */
+  .review-summary-box {
+    width: 100% !important;
+    padding: 1rem !important;
+  }
+  
+  .review-score {
+    font-size: 2rem;
+  }
+  
+  .reviewer-name {
+    font-size: 1rem;
+  }
+  
+  .review-text {
+    font-size: 0.9rem;
+  }
+  
+  .btn-read-reviews {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+  
+  /* Gallery */
+  .gallery-item {
+    height: 120px;
+  }
+  
+  /* FAQ */
+  .faq-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 0.65rem;
+  }
+  
+  .faq-question {
+    font-size: 0.95rem;
+  }
+  
+  .faq-answer {
+    font-size: 0.9rem;
+  }
+  
+  /* Description text */
+  .description-text p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  /* Section headings */
+  #gallery-section h3,
+  #vehicle-details-section h3,
+  #reviews-section h3,
+  #faq-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+}
+
+/* Extra small devices (phones, 375px and down) */
+@media (max-width: 375px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .profile-img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .profile-card h2.fw-bold {
+    font-size: 1.1rem !important;
+  }
+  
+  .btn-quote {
+    padding: 14px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .driver-section-title {
+    font-size: 1.25rem;
+  }
+}
