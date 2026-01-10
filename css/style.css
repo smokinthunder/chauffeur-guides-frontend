@@ -168,6 +168,15 @@ a {
   width: auto;
 }
 
+/* Sticky Navbar - Desktop Only */
+@media (min-width: 992px) {
+  #header-placeholder {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+  }
+}
+
 /* 4. HERO & SEARCH (Index Specific) */
 .hero-wrapper {
   background: url('../assets/index/hero-bg.jpg') no-repeat center center/cover;
