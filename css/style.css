@@ -1469,22 +1469,51 @@ a {
   
   .navbar-toggler {
     border: none;
-    padding: 8px;
-    border-radius: 8px;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    position: relative;
     background-color: transparent;
     transition: background-color 0.3s ease;
   }
   
-  .navbar-toggler:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .hamburger-lines {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6px 4px;
+  }
+
+  .line {
+    display: block;
+    height: 3px;
+    width: 100%;
+    border-radius: 10px;
+    background: var(--brand-primary);
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  }
+
+  /* Animation for X shape when open */
+  .navbar-toggler[aria-expanded="true"] .line1 {
+    transform: translateY(8.5px) rotate(45deg);
+  }
+
+  .navbar-toggler[aria-expanded="true"] .line2 {
+    opacity: 0;
+  }
+
+  .navbar-toggler[aria-expanded="true"] .line3 {
+    transform: translateY(-8.5px) rotate(-45deg);
   }
 
   .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(235, 112, 36, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-  }
-  
-  .navbar-toggler:focus {
-    box-shadow: none;
+    display: none; /* Hide default icon if present in other references */
   }
   
   .navbar-collapse {
